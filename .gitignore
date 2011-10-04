@@ -1,0 +1,8 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+doc/PvE
+doc/*.pdf
+app/assets/images/DUlogo.png
+.sass-cache/

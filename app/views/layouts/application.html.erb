@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DesignUnited</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id='wrapper'>
+<div id='leftcol'><%= image_tag("DUlogo.png") %></div>
+<div id='midcol'>
+	<div id='navigation'>
+		<%= render :partial => "nav" %>
+	</div>
+	<div id='content'>
+		<%= yield %>
+	</div>
+</div>
+<div id='rightcol'>
+	<div id='search'><h2>search /</h2></div>
+	<div id='login'><h2>login /</h2></div>
+	<div id='events'><h2>Events</h2></div>
+</div>
+</div>
+</body>
+</html>
