@@ -1,2 +1,0 @@
-class Opinie < Page
-end

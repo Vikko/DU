@@ -1,2 +1,14 @@
-<h1>Homepage</h1>
-<p>Index stuff</p>
+<% if @about %>
+	<% if @about.published %>
+		<h2>about</h2>
+		<hr/>
+		<h3><%= @about.title %></h3>
+		<%= truncator(@about.content, 400, "...") %>
+		<p><%= link_to "read more/", about_path, :class => "readmore" %></p>
+	<% end %>
+<% end %>
+<% if @projects %>
+	<h2>Projects</h2>
+	<% @projects.each do |project| %>
+	<% end%>
+<% end %>
