@@ -1,6 +1,1 @@
-<% @comments.each do |comment| %>
-	<% if comment.published? %>
-		<h2><%= link_to comment.title, comment %></h2>
-		<%= raw comment.content %>
-	<% end %>
-<% end %>
+<p><%= link_to "New Comment", new_comment_path %></p>

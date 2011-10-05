@@ -1,11 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
 one:
   user: MyString
   email: MyString
   content: MyText
+  blogpage_id: 1
 
 two:
   user: MyString
   email: MyString
   content: MyText
+  blogpage_id: 1

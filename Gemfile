@@ -8,6 +8,8 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 
 gem 'inherited_resources'
+gem "nifty-generators", :group => :development
+
 gem "meta_search"
 gem "truncate_html"
 
@@ -35,3 +37,4 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+gem "mocha", :group => :test

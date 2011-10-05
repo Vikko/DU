@@ -63,10 +63,9 @@ DesignUnited::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   root :to => "home#index"
   match "/pages" => "pages#index"
-  resource :about, :blog
+  resource :about
   resources :projects, :cases
   resources :blogpages do
     resources :comments
   end
-  
 end

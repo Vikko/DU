@@ -64,6 +64,7 @@ GEM
       polyamorous (~> 0.5.0)
     mime-types (1.16)
     multi_json (1.0.3)
+    nifty-generators (0.4.6)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.2)
@@ -127,6 +128,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails
   meta_search
+  nifty-generators
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)
   sqlite3
