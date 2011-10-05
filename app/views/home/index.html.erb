@@ -8,7 +8,10 @@
 	<% end %>
 <% end %>
 <% if @projects %>
-	<h2>Projects</h2>
+	<h2>Projects</h2><hr/>
 	<% @projects.each do |project| %>
+	<h3>project.title</h3>
+	<%= truncate_html(project.content, :length => 400, :omission => '...') %>
+	<p><%= link_to "read more/", project_path(project), :class => "readmore" %></p>
 	<% end%>
 <% end %>
