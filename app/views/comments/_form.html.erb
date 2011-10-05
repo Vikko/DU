@@ -1,5 +1,4 @@
-<%= form_for @comment do |f| %>
-  <%= f.error_messages %>
+<%= form_for [@blogpage, Comment.new] do |f| %>
   <p>
     <%= f.label :user %><br />
     <%= f.text_field :user %>

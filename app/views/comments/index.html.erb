@@ -1,1 +1,4 @@
-<p><%= link_to "New Comment", new_comment_path %></p>
+<% @comments.each do |comment| %>
+	<h3><%= comment.user %></h3>
+	<%= raw comment.content %>
+<% end %>
