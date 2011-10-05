@@ -3,7 +3,7 @@
 		<h2>about</h2>
 		<hr/>
 		<h3><%= @about.title %></h3>
-		<%= truncator(@about.content, 400, "...") %>
+		<%= truncate_html(@about.content, :length => 400, :omission => '...') %>
 		<p><%= link_to "read more/", about_path, :class => "readmore" %></p>
 	<% end %>
 <% end %>

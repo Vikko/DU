@@ -1,0 +1,4 @@
+<% @pages.each do |page| %>
+	<p><%= page.title %></br><hr><%= truncate_html(page.content, :length => 50, :omission => "...") %></p>
+<% end %>
+	

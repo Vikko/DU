@@ -1,0 +1,6 @@
+<% @projects.each do |project| %>
+	<% if project.published? %>
+		<h2><%= link_to project.title, project %></h2>
+		<%= truncate_html(project.content, :length => 400, :omission => '...') %>
+	<% end %>
+<% end %>
