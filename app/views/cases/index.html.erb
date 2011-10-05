@@ -1,0 +1,6 @@
+<% @cases.each do |cases| %>
+	<% if cases.published? %>
+		<h2><%= link_to cases.title, cases %></h2>
+		<%= truncate_html(cases.content, :length => 400, :omission => '...') %>
+	<% end %>
+<% end %>

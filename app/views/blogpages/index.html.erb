@@ -1,0 +1,6 @@
+<% @blogpages.each do |page| %>
+	<% if page.published? %>
+		<h2><%= link_to page.title, page %></h2>
+		<%= truncate_html(page.content, :length => 400, :omission => '...') %>
+	<% end %>
+<% end %>
