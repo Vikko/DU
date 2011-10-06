@@ -1,2 +1,4 @@
-<h2><%= @event.title %></h2> on <%= l(@event.date, :format => "%d %b %Y") %><br/><br/>
+<h2><%= @event.title %></h2> on <%= l(@event.date, :format => "%d %b %Y") %>
+<div id="actions"><%= link_to "Edit", edit_event_path(@event) %>|<%= link_to "Delete", @event, :confirm => "Are you sure you want to delete "+@event.title+"?\nThis action cannot be undone!", :method => :delete %></div>
+<br/><br/>
 <%= raw @event.content %>

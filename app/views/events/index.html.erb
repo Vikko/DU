@@ -1,6 +1,13 @@
+<h1>Events</h1><div class="actions"><%= link_to "New event", new_event_path %></div>
 <% @events.each do |event| %>
 	<% if event.published? %>
-		<h2><%= link_to event.title, event %></h2><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i><br/><hr/>
+		<h2>
+		<% if event.external_link.blank? %>	
+			<%= link_to event.title, event %>
+		<% else %>
+			<%= link_to event.title, event.external_link %>
+		<% end %>
+		</h2><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i><br/><hr/>
 		<%= truncate_html(event.content, :length => 400, :omission => '...') %><hr/><hr/>
 	<% end %>
 <% end %>

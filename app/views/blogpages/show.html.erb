@@ -3,6 +3,13 @@
 <hr/><b>Comments:</b><hr/>
 <% @comments.each do |comment| %>
 	<h3><%= comment.user %></h3>
+	<div id="actions">
+	<%= link_to "Edit", edit_blogpage_comment_path(@blogpage, comment) %>|
+	<%= link_to "Delete", blogpage_comment_path(@blogpage, comment), :confirm => "Are you sure you want to delete this comment?\nThis action cannot be undone!", :method => :delete %>
+	</div>
 	<p><%= comment.content %><p>
 	<hr>
 <% end %>
+<% if @comments.blank? %>
+	<p>No comments were found.</p>
+	<% end %>

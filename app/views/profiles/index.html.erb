@@ -19,7 +19,7 @@
 		<%= name %>
 	<% end %>
 	| <%= link_to "Edit", edit_profile_path(profile) %>
-	| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+name+"?\n(This action cannot be undone.)", :method => :delete %>
+	| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+name+"?\nThis action cannot be undone!", :method => :delete %>
 	</p>
 <% end %>
 <%= link_to "New", new_profile_path %>

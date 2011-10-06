@@ -8,4 +8,8 @@ class CommentsController < InheritedResources::Base
   def update
     update! { parent_url }
   end
+  
+  def destroy
+    destroy! { parent_url }
+  end
 end
