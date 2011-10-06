@@ -1,12 +1,10 @@
-<h2>New project</h2>
- 
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this page from being saved:</h2>
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this page from being saved:</h2>
 
       <ul>
-      <% @project.errors.full_messages.each do |msg| %>
+      <% @event.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -29,9 +27,10 @@
     <%= f.label :author %><br />
     <%= f.text_field :author %>
   </div>
-  <div class="actions">
+  <div class="field">
+	<%= f.label :date %><br />
+    <%= f.date_select :date, :start_year => 2010, :order => [:day, :month, :year] %>
+  </div>  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-<%= link_to 'Back', projects_path %>

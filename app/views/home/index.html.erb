@@ -7,11 +7,19 @@
 		<p><%= link_to "read more/", about_path, :class => "readmore" %></p>
 	<% end %>
 <% end %>
-<% if @projects %>
-	<h2>Projects</h2><hr/>
-	<% @projects.each do |project| %>
-	<h3>project.title</h3>
-	<%= truncate_html(project.content, :length => 400, :omission => '...') %>
-	<p><%= link_to "read more/", project_path(project), :class => "readmore" %></p>
+<% if @cases %>
+	<h2>Cases</h2><hr/>
+	<% @cases.each do |page| %>
+	<h3><%= page.title %></h3>
+	<%= truncate_html(page.content, :length => 400, :omission => '...') %>
+	<p><%= link_to "read more/", case_path(page), :class => "readmore" %></p>
+	<% end%>
+<% end %>
+<% if @blogpages %>
+	<h2>Blog</h2><hr/>
+	<% @blogpages.each do |blogpage| %>
+	<h3><%= blogpage.title %></h3>
+	<%= truncate_html(blogpage.content, :length => 400, :omission => '...') %>
+	<p><%= link_to "read more/", blogpage_path(blogpage), :class => "readmore" %></p>
 	<% end%>
 <% end %>

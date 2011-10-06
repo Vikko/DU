@@ -1,0 +1,25 @@
+<h2>Map</h2><hr/>
+<% @profiles.each do |profile| %>
+	<p><% name = "" %>
+	<% unless profile.prefix.blank? %>
+		<% name += profile.prefix.strip + " " %>
+	<% end %>
+	<% name += profile.firstname.strip + " " %>
+	<% unless profile.middlename.blank? %>
+		<% name += profile.middlename.strip + " " %>
+	<% end %>
+	<% name += profile.lastname.strip + " " %>
+	<% unless profile.suffix.blank? %>
+		<% name += profile.suffix.strip + " " %>
+	<% end %>
+	<% name += "(" + profile.university + ")" %>
+	<% unless profile.external_link.blank? %>
+		<%= link_to name, profile.external_link %></h2>
+	<% else%>
+		<%= name %>
+	<% end %>
+	| <%= link_to "Edit", edit_profile_path(profile) %>
+	| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+name+"?\n(This action cannot be undone.)", :method => :delete %>
+	</p>
+<% end %>
+<%= link_to "New", new_profile_path %>

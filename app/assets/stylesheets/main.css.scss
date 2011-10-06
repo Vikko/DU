@@ -64,9 +64,11 @@ div#rightcol {
 	}
 	div#events{
 		margin: 10px;
-		text-decoration: underline;
 		background-color: #FFF;
 		display: block;
 		height: 586px;
+		h4 {
+			text-decoration: underline;
+		}
 	}
 }

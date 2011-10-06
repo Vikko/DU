@@ -4,4 +4,8 @@ class CommentsController < InheritedResources::Base
   def create
     create! { parent_url }
   end
+  
+  def update
+    update! { parent_url }
+  end
 end

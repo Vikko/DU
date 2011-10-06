@@ -64,7 +64,7 @@ DesignUnited::Application.routes.draw do
   root :to => "home#index"
   match "/pages" => "pages#index" #for search
   resource :about
-  resources :projects, :cases
+  resources :profiles, :cases, :events
   resources :blogpages do
     resources :comments
   end

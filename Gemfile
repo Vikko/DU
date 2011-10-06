@@ -8,10 +8,11 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 
 gem 'inherited_resources'
-gem "nifty-generators", :group => :development
 
 gem "meta_search"
 gem "truncate_html"
+
+gem 'calendar_date_select'
 
 
 # Gems used only for assets and not required

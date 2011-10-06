@@ -1,6 +1,6 @@
 <h2><%= @blogpage.title %></h2>
 <%= raw @blogpage.content %>
-<hr/>
+<hr/><b>Comments:</b><hr/>
 <% @comments.each do |comment| %>
 	<h3><%= comment.user %></h3>
 	<p><%= comment.content %><p>

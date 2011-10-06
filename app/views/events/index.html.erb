@@ -1,0 +1,6 @@
+<% @events.each do |event| %>
+	<% if event.published? %>
+		<h2><%= link_to event.title, event %></h2><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i><br/><hr/>
+		<%= truncate_html(event.content, :length => 400, :omission => '...') %><hr/><hr/>
+	<% end %>
+<% end %>
