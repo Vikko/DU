@@ -23,10 +23,12 @@
     <%= f.label :published %><br />
     <%= f.check_box :published %>
   </div>
+  <% if (current_user.role.eql? "editor") %>
   <div class="field">
     <%= f.label :author %><br />
     <%= f.text_field :author %>
   </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

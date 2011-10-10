@@ -1,4 +1,10 @@
 <h2><%= @case.title %></h2>
-<div id="actions"><%= link_to "Edit", edit_case_path(@case) %>|<%= link_to "Delete", @case, :confirm => "Are you sure you want to delete "+@case.title+"?\nThis action cannot be undone!", :method => :delete %>
+<div id="actions">
+<% if can? :update, @case %>
+	<%= link_to "Edit", edit_case_path(@case) %>|
+<% end %>
+<% if can? :destroy, @case %>
+	<%= link_to "Delete", @case, :confirm => "Are you sure you want to delete "+@case.title+"?\nThis action cannot be undone!", :method => :delete %>
+<% end %>	
 </div>
 <%= raw @case.content %>

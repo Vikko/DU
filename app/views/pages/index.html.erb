@@ -1,4 +1,6 @@
 <% @pages.each do |page| %>
-	<p><%= link_to page.title, page %></br><hr><%= truncate_html(page.content, :length => 50, :omission => "...") %></p>
+	<% if can? :read, page %>
+		<p><%= link_to page.title, page %></br><hr><%= truncate_html(page.content, :length => 50, :omission => "...") %></p>
+	<% end %>
 <% end %>
 	

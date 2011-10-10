@@ -1,15 +1,23 @@
 <h2><%= @blogpage.title %></h2>
-<div id="actions">
-<%= link_to "Edit", edit_blogpage_path(@blogpage) %>|
-<%= link_to "Delete", blogpage_path(@blogpage), :confirm => "Are you sure you want to delete "+@blogpage.title+"?\nThis action cannot be undone!", :method => :delete %>
+<div class="actions">
+<% if can? :update, @blogpage %>
+	<%= link_to "Edit", edit_blogpage_path(@blogpage) %>|
+<% end %>
+<% if can? :destroy, @blogpage %>
+	<%= link_to "Delete", blogpage_path(@blogpage), :confirm => "Are you sure you want to delete "+@blogpage.title+"?\nThis action cannot be undone!", :method => :delete %>
+<% end %>
 </div>
 <%= raw @blogpage.content %>
 <hr/><b>Comments:</b><hr/>
 <% @comments.each do |comment| %>
 	<h3><%= comment.user %></h3>
-	<div id="actions">
-	<%= link_to "Edit", edit_blogpage_comment_path(@blogpage, comment) %>|
-	<%= link_to "Delete", blogpage_comment_path(@blogpage, comment), :confirm => "Are you sure you want to delete this comment?\nThis action cannot be undone!", :method => :delete %>
+	<div class="actions">
+	<% if can? :update, comment %>
+		<%= link_to "Edit", edit_blogpage_comment_path(@blogpage, comment) %>|
+	<% end %>
+	<% if can? :destroy, comment %>
+		<%= link_to "Delete", blogpage_comment_path(@blogpage, comment), :confirm => "Are you sure you want to delete this comment?\nThis action cannot be undone!", :method => :delete %>
+	<% end %>
 	</div>
 	<p><%= comment.content %><p>
 	<hr>
@@ -17,3 +25,4 @@
 <% if @comments.blank? %>
 	<p>No comments were found.</p>
 <% end %>
+<%= link_to "Add comment", new_blogpage_comment_path(@blogpage, Comment.new) %>

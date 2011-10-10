@@ -1,4 +1,8 @@
-<h2><%= @page.title %></h2>
-<div class="actions"><%= link_to "Edit", edit_about_path %></div>
+<div><h2><%= @page.title %></h2></div>
+<div class="actions">
+<% if can? :update, @page %>
+	<%= link_to "Edit", edit_about_path %>
+<% end %>
+</div>
 <hr>
 <%= raw @page.content %>
