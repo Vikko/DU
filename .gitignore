@@ -6,3 +6,4 @@ doc/PvE
 doc/*.pdf
 app/assets/images/DUlogo.png
 .sass-cache/
+db/seeds.rb

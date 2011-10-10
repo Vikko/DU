@@ -1,3 +1,9 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+<% if alert %>
+	<p id="alert"><%= alert %></p>
+<% end %>
 <% if @about %>
 	<% if @about.published %>
 		<h2>about</h2>
@@ -11,7 +17,8 @@
 <% if @cases %>
 	<h2>Cases</h2><hr/>
 	<% @cases.each do |page| %>
-	<h3><%= page.title %></h3><div id="actions"><%= link_to "Edit", edit_case_path(page) %>|<%= link_to "Delete", page, :confirm => "Are you sure you want to delete "+page.title+"?\nThis action cannot be undone!", :method => :delete %></div>
+	<h3><%= page.title %></h3>
+	<div id="actions"><%= link_to "Edit", edit_case_path(page) %>|<%= link_to "Delete", page, :confirm => "Are you sure you want to delete "+page.title+"?\nThis action cannot be undone!", :method => :delete %></div>
 	<%= raw truncator(page.content, 600, '...') %>
 	<p><%= link_to "read more/", case_path(page), :class => "readmore" %></p>
 	<% end%>
@@ -19,7 +26,8 @@
 <% if @blogpages %>
 	<h2>Blog</h2><hr/>
 	<% @blogpages.each do |blogpage| %>
-	<h3><%= blogpage.title %></h3><div id="actions"><%= link_to "Edit", edit_blogpage_path(blogpage) %>|<%= link_to "Delete", blogpage, :confirm => "Are you sure you want to delete "+blogpage.title+"?\nThis action cannot be undone!", :method => :delete %></div>
+	<h3><%= blogpage.title %></h3>
+	<div id="actions"><%= link_to "Edit", edit_blogpage_path(blogpage) %>|<%= link_to "Delete", blogpage, :confirm => "Are you sure you want to delete "+blogpage.title+"?\nThis action cannot be undone!", :method => :delete %></div>
 	<%= raw truncator(blogpage.content, 600, '...') %>
 	<p><%= link_to "read more/", blogpage_path(blogpage), :class => "readmore" %></p>
 	<% end%>

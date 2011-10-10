@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006085646) do
+ActiveRecord::Schema.define(:version => 20111006135309) do
 
   create_table "comments", :force => true do |t|
     t.string   "user"
@@ -52,12 +52,21 @@ ActiveRecord::Schema.define(:version => 20111006085646) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password"
-    t.string   "role"
+    t.string   "username"
+    t.string   "email",                                            :null => false
+    t.string   "role",                         :default => "user", :null => false
+    t.string   "crypted_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.string   "activation_state"
+    t.string   "activation_token"
+    t.datetime "activation_token_expires_at"
   end
+
+  add_index "users", ["activation_token"], :name => "index_users_on_activation_token"
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
 
 end

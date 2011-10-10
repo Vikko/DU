@@ -12,8 +12,8 @@ gem 'inherited_resources'
 gem "meta_search"
 gem "truncate_html"
 
-gem 'calendar_date_select'
-
+gem 'sorcery'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,7 +1,5 @@
 <h1>Blog</h1><div class="actions"><%= link_to "New Blog", new_blogpage_path %></div>
 <% @blogpages.each do |page| %>
-	<% if page.published? %>
-		<h2><%= link_to page.title, page %></h2><i>by: <%= page.author %> on <%= l(page.created_at, :format => :short) %></i><br/><hr/>
-		<%= truncate_html(page.content, :length => 400, :omission => '...') %><%= link_to "Show comments", blogpage_path(page) %>|<%= link_to "Add comment", new_blogpage_comment_path(page, Comment.new) %><hr/><hr/>
-	<% end %>
+	<h2><%= link_to page.title, page %></h2><i>by: <%= page.author %> on <%= l(page.created_at, :format => :short) %></i><br/><hr/>
+	<%= truncate_html(page.content, :length => 400, :omission => '...') %><%= link_to "Show comments", blogpage_path(page) %>|<%= link_to "Add comment", new_blogpage_comment_path(page, Comment.new) %><hr/><hr/>
 <% end %>

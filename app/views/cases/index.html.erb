@@ -1,7 +1,5 @@
 <h1>Cases</h1> <div class="actions"><%= link_to "Add new case", new_case_path %></div>
 <% @cases.each do |page| %>
-	<% if page.published? #|| role admin%> 
-		<h2><%= link_to page.title, page %></h2><div id="actions"><%= link_to "Edit", edit_case_path(page) %>|<%= link_to "Delete", page, :confirm => "Are you sure you want to delete "+page.title+"?\nThis action cannot be undone!", :method => :delete %></div>
-		<%= truncate_html(page.content, :length => 400, :omission => '...') %>
-	<% end %>
+	<h2><%= link_to page.title, page %></h2><div id="actions"><%= link_to "Edit", edit_case_path(page) %>|<%= link_to "Delete", page, :confirm => "Are you sure you want to delete "+page.title+"?\nThis action cannot be undone!", :method => :delete %></div>
+	<%= truncate_html(page.content, :length => 400, :omission => '...') %>
 <% end %>

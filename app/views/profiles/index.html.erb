@@ -1,4 +1,4 @@
-<h2>Map</h2><hr/>
+<h2>Map</h2><div class="actions"><%= link_to "New profile", new_profile_path %></div><hr/>
 <% @profiles.each do |profile| %>
 	<p><% name = "" %>
 	<% unless profile.prefix.blank? %>
@@ -22,4 +22,3 @@
 	| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+name+"?\nThis action cannot be undone!", :method => :delete %>
 	</p>
 <% end %>
-<%= link_to "New", new_profile_path %>

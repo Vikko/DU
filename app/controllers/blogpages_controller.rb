@@ -1,6 +1,6 @@
 class BlogpagesController < InheritedResources::Base
   def index
-    @blogpages = Blogpage.find(:all, :order => "created_at DESC")  
+    @blogpages = Blogpage.find(:all, :order => "created_at DESC")
   end
   
   def show

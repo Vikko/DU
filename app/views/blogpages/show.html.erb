@@ -1,4 +1,8 @@
 <h2><%= @blogpage.title %></h2>
+<div id="actions">
+<%= link_to "Edit", edit_blogpage_path(@blogpage) %>|
+<%= link_to "Delete", blogpage_path(@blogpage), :confirm => "Are you sure you want to delete "+@blogpage.title+"?\nThis action cannot be undone!", :method => :delete %>
+</div>
 <%= raw @blogpage.content %>
 <hr/><b>Comments:</b><hr/>
 <% @comments.each do |comment| %>
@@ -12,4 +16,4 @@
 <% end %>
 <% if @comments.blank? %>
 	<p>No comments were found.</p>
-	<% end %>
+<% end %>
