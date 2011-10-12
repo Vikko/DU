@@ -1,78 +1,130 @@
-body {
-	background-color: #DDD;
+@font-face {
+    font-family: Interstatelight;
+    src: url(http://web.tudelft.nl/Designunited/V2/fonts/Interstate-Light.otf);
+    font-weight:800;
 }
+
+body {
+	background: image-url('bg.gif');
+}
+
 div#wrapper {
-	width: 1150px;
-	margin-left: auto;
+	width: 950px;
+  	margin-left: auto;
 	margin-right: auto;
+	font-family: Verdana, Geneva, sans-serif; 
+	font-size: 70%;
+	letter-spacing:0.05em;
+	line-height: 150%;
 }
 
 div#leftcol {
 	background-color: #FFF;
-	width: 260px;
-	height: 700px;
-	margin: 10px;
-	float: left;
+    width: 180px;
+    margin: 5px;
+    float: left;
 	img {
-		width: 250px;
+		width: 180px;
 		margin-left: 4px;
 	}
 }
 
+H2 {
+    font-family: Interstatelight;
+    font-size:180%;
+    color:#006991;
+    border-bottom: 1px solid #006991;
+    line-height: 140%;
+}
+
+H3 {
+    font-family:Interstatelight; 
+    font-size:120%;
+    color:#006991;
+    padding-left:10px;
+    padding-right:10px;
+    line-height: 140%;
+}
+
+P {
+    padding-left:10px;
+    padding-right:10px;
+}
+
 div#midcol {
 	width: 550px;
-	margin: 10px;
 	float: left;
+	margin: 10px;
 }
 
 div#navigation {
 	width: 550px;
+ 	text-align:justify;
 	margin-bottom: 20px;
+	font-family:Interstatelight, Verdana, monospace;
+	font-weight:bold;
+	font-size:120%;
 }
 
 div a.navlink {
 	text-decoration: none;
+	font-family:Interstatelight, Verdana, monospace;; 
 	color: #000;
 	background: #FFF;
-	padding: 3px;
-	margin-left: 35px;
-	margin-right: auto;
+	padding-left:10px;
+	padding-right:10px;
 }
 
 div a.navlink:hover {
 	font-weight: bold;
 }
 
-div#content{
+div#content {
 	background-color: #FFF;
+    padding-left:10px;
+    padding-right:10px;
 }
 
-div.actions{
-	float: right;
+div.actions {
+	text-align:right;
+    color:#666;
+    float:right;
+    position:relative;
+    top:-30px;
+    line-height:0%;
+	a:link {
+		text-decoration: underline;
+		color:#999;
+		background: #FFF;
+	}
+	a:hover {
+		font-weight: bold;
+	}
 }
 
 div#rightcol {
-	width: 260px;
-	height: 700px;
-	margin: 10px;
+  	width: 180px;
 	float: left;
-	div#search {
-		background-color: blue;
-		color: #FFF;
-		margin: 10px;
-	}
-	div#login{
-		background-color: blue;
-		color: #FFF;
-		margin: 10px;
-	}
-	div#events{
+	div#events {
 		margin: 10px;
 		background-color: #FFF;
 		display: block;
-		height: 586px;
 		h4 {
-			text-decoration: underline;
+		  text-decoration: underline;
 		}
 	}
+}
+
+div#login, div#search {
+    background-color: #FFFFFF;
+    color: #000;
+    font-family: Interstatelight, Verdana, Geneva;
+    font-size: 100%;
+    font-variant: small-caps;
+    width:160px;
+    margin-left:10px;
+}
+
+div.backgroundtitle {
+    background-color:#00aeef;
 }

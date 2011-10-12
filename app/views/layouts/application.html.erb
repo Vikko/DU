@@ -8,7 +8,10 @@
 </head>
 <body>
 <div id='wrapper'>
-<div id='leftcol'><%= image_tag("DUlogo.png") %></div>
+<div id='leftcol'>
+<%= image_tag("DUlogo.png") %>
+	<%= yield :leftcol %>
+</div>
 <div id='midcol'>
 	<div id='navigation'>
 		<%= render :partial => "nav" %>
@@ -18,10 +21,11 @@
 	</div>
 </div>
 <div id='rightcol'>
-	<div id='search'><h4>search /</h4>
+	<div id='search'><div class='backgroundtitle'><h4>search /</h4></div>
 	<%= render :partial => "search" %>
 	</div>
 	<div id='login'>
+		<div class='backgroundtitle'>
 		<% if current_user %>
 			<h4>Logged in as 
 			<% if current_user.username.blank? %>
@@ -33,14 +37,9 @@
 		<% else %>
 			<h4><%= link_to "Sign up", signup_path %> or <%= link_to "log in /", login_path %></h4>
 		<% end %>
+		</div>
 	</div>
-	<div id='events'><h4>Events</h4>
-	<% @agenda = Event.find(:all, :order => "created_at DESC", :limit => 4) %>
-	<% @agenda.each do |event| %>
-		<%= link_to event.title, event %><i>on <%= l(event.date, :format => "%d-%b-%Y") %></i><hr/>
-		<%= strip_tags(event.content) %>
-	<% end %>
-		
+		<%= yield :rightcol %>
 	</div>
 </div>
 </div>

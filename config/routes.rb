@@ -8,9 +8,19 @@ DesignUnited::Application.routes.draw do
   get "home/index"
 
   get "pages/index"
+  
+  match "about", :controller => "abouts", :action => "show", :id => 1, :as => "about"
+  match "introduction", :controller => "abouts", :action => "show", :id => 2, :as => "introduction"
+  match "beleid", :controller => "abouts", :action => "show", :id => 3, :as => "beleid"
+  match "activities", :controller => "abouts", :action => "show", :id => 4, :as => "activities"
+  match "contact", :controller => "abouts", :action => "show", :id => 5, :as => "contact"
+  
+  
   root :to => "home#index"
+  
   match "/pages" => "pages#index" #for search
-  resource :about
+  
+  resources :abouts
   resources :profiles, :cases, :events, :users, :sessions
   resources :blogpages do
     resources :comments

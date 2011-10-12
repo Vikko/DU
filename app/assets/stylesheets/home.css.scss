@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 a.readmore {
-	text-decoration: none;
-	color: #38ACEC;
+  text-decoration: none;
+  color: #00aeef;
+}
+a.readmore:hover {
+  text-decoration: underline;
+  color: #006991;
+}
+a.readmore:visited {
+  text-decoration: none;
+  color: #006991;
 }

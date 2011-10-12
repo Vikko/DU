@@ -1,8 +1,37 @@
-<div><h2><%= @page.title %></h2></div>
+<% content_for :leftcol do %>
+	<p>design united / 
+		<% if @about.id == 1 %>
+			<b>about /</b>
+		<% else%>
+			<%= link_to "about /", about_path %>
+		<% end %></p><p>
+		<% if @about.id == 2 %>
+			<b>introduction /</b>
+		<% else%>
+			<%= link_to "introduction /", introduction_path %>
+		<% end %></p><p>
+		<% if @about.id == 3 %>
+			<b>beleid /</b>
+		<% else%>
+			<%= link_to "beleid /", beleid_path %>
+		<% end %></p><p>
+		<% if @about.id == 4 %>
+			<b>activities /</b>
+		<% else%>
+			<%= link_to "activities /", activities_path %>
+		<% end %></p><p>
+		<% if @about.id == 5 %>
+			<b>contact /</b>
+		<% else%>
+			<%= link_to "contact /", contact_path %>
+		<% end %></p>
+	</p>
+<% end %>
+<div><h2><%= @about.title %></h2></div>
 <div class="actions">
-<% if can? :update, @page %>
-	<%= link_to "Edit", edit_about_path %>
+<% if can? :update, @about %>
+	<%= link_to "Edit", edit_about_path(@about) %>
 <% end %>
 </div>
 <hr>
-<%= raw @page.content %>
+<%= raw @about.content %>

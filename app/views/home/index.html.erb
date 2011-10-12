@@ -1,28 +1,28 @@
+<% content_for :leftcol do %>
+	<% if @about %>
+		<% if @about.published %>
+			<h3><%= @about.title %></h3>
+			<div class="actions">
+				<% if can? :update, @about %>
+					<%= link_to "Edit", edit_about_path(@about) %>
+				<% end %>
+				</div>
+			<%= raw truncator(@about.content, 600, '...') %>
+			<p><%= link_to "read more/", @about, :class => "readmore" %></p>
+		<% end %>
+	<% end %>
+<% end %>
 <% if notice %>
 	<p id="notice"><%= notice %></p>
 <% end %>
 <% if alert %>
 	<p id="alert"><%= alert %></p>
 <% end %>
-<% if @about %>
-	<% if @about.published %>
-		<h2>about</h2>
-		<hr/>
-		<h3><%= @about.title %></h3>
-		<div class="actions">
-			<% if can? :update, @about %>
-				<%= link_to "Edit", edit_about_path %>
-			<% end %>
-			</div>
-		<%= raw truncator(@about.content, 600, '...') %>
-		<p><%= link_to "read more/", about_path, :class => "readmore" %></p>
-	<% end %>
-<% end %>
 <% if @cases %>
-	<h2>Cases</h2><hr/>
+	<h2>Cases</h2>
 	<% @cases.each do |page| %>
 	<h3><%= page.title %></h3>
-	<div id="actions">
+	<div class="actions">
 	<% if can? :update, page %>	
 		<%= link_to "Edit", edit_case_path(page) %>|
 	<% end %>
@@ -35,10 +35,10 @@
 	<% end%>
 <% end %>
 <% if @blogpages %>
-	<h2>Blog</h2><hr/>
+	<h2>Blog</h2>
 	<% @blogpages.each do |blogpage| %>
 	<h3><%= blogpage.title %></h3>
-	<div id="actions">
+	<div class="actions">
 	<% if can? :update, blogpage %>
 		<%= link_to "Edit", edit_blogpage_path(blogpage) %>|
 	<% end %>
@@ -49,4 +49,7 @@
 	<%= raw truncator(blogpage.content, 600, '...') %>
 	<p><%= link_to "read more/", blogpage_path(blogpage), :class => "readmore" %></p>
 	<% end %>
+<% end %>
+<% content_for :rightcol do %>
+	<%= render :partial => "events" %>
 <% end %>
