@@ -1,3 +1,4 @@
+<h2>search results</h2>
 <% @pages.each do |page| %>
 	<% if can? :read, page %>
 		<p><%= link_to page.title, page %></br><hr><%= truncate_html(page.content, :length => 50, :omission => "...") %></p>

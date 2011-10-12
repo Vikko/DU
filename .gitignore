@@ -7,3 +7,4 @@ doc/*.pdf
 app/assets/images/DUlogo.png
 .sass-cache/
 db/seeds.rb
+config/initializers/setup_mail.rb

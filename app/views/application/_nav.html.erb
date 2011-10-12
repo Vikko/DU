@@ -1,6 +1,12 @@
-<%= link_to "home", root_path, :class => "navlink" %>
-<%= link_to "about", about_path, :class => "navlink" %>
-<%= link_to "map", profiles_path, :class => "navlink" %>
-<%= link_to "cases", cases_path, :class => "navlink" %>
-<%= link_to "blog", blogpages_path, :class => "navlink" %>
-<%= link_to "event", events_path, :class => "navlink" %>
+<table class="navmenu">
+	<tbody>
+		<tr>
+			<td><%= link_to "home", root_path, :class => "navlink" %></td>
+			<td><%= link_to "about", about_path, :class => "navlink" %></td>
+			<td><%= link_to "map", profiles_path, :class => "navlink" %></td>
+			<td><%= link_to "cases", cases_path, :class => "navlink" %></td>
+			<td><%= link_to "blog", blogpages_path, :class => "navlink" %></td>
+			<td><%= link_to "event", events_path, :class => "navlink" %></td>
+		</tr>
+	</tbody>
+</table>

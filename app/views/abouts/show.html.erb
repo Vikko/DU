@@ -1,10 +1,10 @@
 <% content_for :leftcol do %>
-	<p>design united / 
+	<h4>design united / 
 		<% if @about.id == 1 %>
 			<b>about /</b>
 		<% else%>
 			<%= link_to "about /", about_path %>
-		<% end %></p><p>
+		<% end %></h4><hr/><p>
 		<% if @about.id == 2 %>
 			<b>introduction /</b>
 		<% else%>
@@ -24,7 +24,7 @@
 			<b>contact /</b>
 		<% else%>
 			<%= link_to "contact /", contact_path %>
-		<% end %></p>
+		<% end %></p><hr/>
 	</p>
 <% end %>
 <div><h2><%= @about.title %></h2></div>

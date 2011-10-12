@@ -1,5 +1,5 @@
 <% @search = Page.search(params[:search]) %>
 <%= form_for @search do |f| %>
-   <%= f.text_field :content_contains %>
+   <%= f.text_field :content_contains, :size => '30' %>
    <%= f.submit "Search" %>
 <% end %>

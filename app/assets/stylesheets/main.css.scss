@@ -9,40 +9,39 @@ body {
 }
 
 div#wrapper {
-	width: 950px;
-  	margin-left: auto;
+	width: 910px;
+	margin-left: auto;
 	margin-right: auto;
-	font-family: Verdana, Geneva, sans-serif; 
+	font-family: Verdana, Geneva, sans-serif;
 	font-size: 70%;
-	letter-spacing:0.05em;
+	letter-spacing: 0.05em;
 	line-height: 150%;
 }
 
 div#leftcol {
 	background-color: #FFF;
     width: 180px;
-    margin: 5px;
+    margin-top: 40px;
+	margin-left: 0px;
+	margin-bottom: 10px;
+	margin-right: 10px;
     float: left;
-	img {
-		width: 180px;
-		margin-left: 4px;
-	}
 }
 
 H2 {
     font-family: Interstatelight;
-    font-size:180%;
-    color:#006991;
-    border-bottom: 1px solid #006991;
+    font-size:160%;
+    color: #2e3192;
+    border-bottom: 1px solid #2e3192;
     line-height: 140%;
 }
 
 H3 {
     font-family:Interstatelight; 
-    font-size:120%;
-    color:#006991;
-    padding-left:10px;
-    padding-right:10px;
+    font-size: 140%;
+    color: #000000;
+    padding-left: 10px;
+    padding-right: 10px;
     line-height: 140%;
 }
 
@@ -52,27 +51,43 @@ P {
 }
 
 div#midcol {
-	width: 550px;
+	width: 510px;
 	float: left;
-	margin: 10px;
+	margin-top: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 div#navigation {
-	width: 550px;
- 	text-align:justify;
-	margin-bottom: 20px;
-	font-family:Interstatelight, Verdana, monospace;
-	font-weight:bold;
-	font-size:120%;
+    width:100%;
+    float:left;
+    text-align:center;
+    font-family:Interstatelight, Verdana, monospace;
+    font-weight:bold;
+    font-size:120%;
 }
 
+table.navmenu {
+	width: 557px;
+	text-align: left;
+	margin-left: -3px;
+	margin-top: -12px;
+}
+
+
 div a.navlink {
-	text-decoration: none;
-	font-family:Interstatelight, Verdana, monospace;; 
-	color: #000;
-	background: #FFF;
-	padding-left:10px;
-	padding-right:10px;
+    text-decoration: none;
+    font-family:Interstatelight, Verdana, monospace;; 
+    color: #000;
+    background: #FFF;
+    padding-left:10px !important;
+    padding-right:10px;
+}
+
+
+div a.navlink:hover {
+  font-weight: bold;
 }
 
 div a.navlink:hover {
@@ -81,9 +96,11 @@ div a.navlink:hover {
 
 div#content {
 	background-color: #FFF;
-    padding-left:10px;
-    padding-right:10px;
-}
+	margin-top: 25px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;}
 
 div.actions {
 	text-align:right;
@@ -103,28 +120,31 @@ div.actions {
 }
 
 div#rightcol {
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	margin-right: 0px;
   	width: 180px;
-	float: left;
-	div#events {
-		margin: 10px;
-		background-color: #FFF;
-		display: block;
-		h4 {
-		  text-decoration: underline;
-		}
-	}
+	float: right;
 }
 
-div#login, div#search {
+div#login, div#search, div#events {
     background-color: #FFFFFF;
-    color: #000;
+    color: #000000;
     font-family: Interstatelight, Verdana, Geneva;
     font-size: 100%;
     font-variant: small-caps;
-    width:160px;
-    margin-left:10px;
+    margin-left:0px;
 }
 
 div.backgroundtitle {
-    background-color:#00aeef;
+    background-color:#2e3192;
+    color: #FFFFFF;
+    font-family: Interstatelight, Verdana, Geneva;
+    font-size: 100%;
+    font-variant: small-caps; 
+	a {
+		color: #FFF;
+		text-decoration: none;
+	}
 }
