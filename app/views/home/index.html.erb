@@ -1,16 +1,15 @@
 <% content_for :leftcol do %>
-	<% if @about %>
-		<% if @about.published %>
-			<h3><%= @about.title %></h3>
-			<div class="actions">
-				<% if can? :update, @about %>
-					<%= link_to "Edit", edit_about_path(@about) %>
-				<% end %>
-				</div>
-			<%= raw truncator(@about.content, 600, '...') %>
-			<p><%= link_to "read more/", @about, :class => "readmore" %></p>
-		<% end %>
+<% if @sidetext %>
+	<% if @sidetext.published %>
+		<h3><%= @sidetext.title %></h3>
+		<div class="actions">
+			<% if can? :update, @sidetext %>
+				<%= link_to "Edit", edit_about_path(@sidetext) %>
+			<% end %>
+		</div>
+		<%= raw @sidetext.content %>
 	<% end %>
+<% end %>
 <% end %>
 <% if notice %>
 	<p id="notice"><%= notice %></p>
@@ -18,8 +17,21 @@
 <% if alert %>
 	<p id="alert"><%= alert %></p>
 <% end %>
+<% if @about %>
+	<h2>about</h2>
+	<% if @about.published %>
+		<h3><%= @about.title %></h3>
+		<div class="actions">
+			<% if can? :update, @about %>
+				<%= link_to "Edit", edit_about_path(@about) %>
+			<% end %>
+			</div>
+		<%= raw truncator(@about.content, 600, '...') %>
+		<p><%= link_to "read more/", @about, :class => "readmore" %></p>
+	<% end %>
+<% end %>
 <% if @cases %>
-	<h2>Cases</h2>
+	<h2>cases</h2>
 	<% @cases.each do |page| %>
 	<h3><%= page.title %></h3>
 	<div class="actions">
@@ -35,7 +47,7 @@
 	<% end%>
 <% end %>
 <% if @blogpages %>
-	<h2>Blog</h2>
+	<h2>blog</h2>
 	<% @blogpages.each do |blogpage| %>
 	<h3><%= blogpage.title %></h3>
 	<div class="actions">
