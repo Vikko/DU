@@ -6,10 +6,8 @@
 </div>
 <% @blogpages.each do |page| %>
 	<% if can? :read, page %>
-	<h2><%= link_to page.title, page %></h2>
-	<i>by: <%= page.author %> on <%= l(page.created_at, :format => :short) %></i><br/>
-	<hr/>
-	<%= truncate_html(page.content, :length => 400, :omission => '...') %><%= link_to "Show more..", blogpage_path(page) %>|<%= link_to "Add comment", new_blogpage_comment_path(page, Comment.new) %>
-	<hr/><hr/>
+	<h3><%= link_to page.title, page %></h3>
+	<p><i>by: <%= page.author %> on <%= l(page.created_at, :format => :short) %></i></p><div class="comments">
+	<%= truncate_html(page.content, :length => 400, :omission => '...') %><%= link_to "Show more..", blogpage_path(page) %>|<%= link_to "Add comment", new_blogpage_comment_path(page, Comment.new) %></div>
 	<% end %>
 <% end %>

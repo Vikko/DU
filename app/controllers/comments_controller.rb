@@ -4,8 +4,11 @@ class CommentsController < InheritedResources::Base
    belongs_to :blogpage
   
    def new
-     @comment.user = current_user.username
-     @comment.email = current_user.email
+     @comment = Comment.new
+     if current_user
+       @comment.user = current_user.username
+       @comment.email = current_user.email
+     end
      new!
    end
   

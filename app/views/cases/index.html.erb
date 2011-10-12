@@ -4,8 +4,8 @@
 <% end %>
 </div>
 <% @cases.each do |page| %>
-	<h2><%= link_to page.title, page %></h2>
-	<div id="actions">
+	<h3><%= link_to page.title, page %></h3>
+	<div class="actions">
 	<% if can? :update, page%>
 		<%= link_to "Edit", edit_case_path(page) %>|
 	<% end %>

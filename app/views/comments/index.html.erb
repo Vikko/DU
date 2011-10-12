@@ -1,6 +1,6 @@
 <% @comments.each do |comment| %>
 	<h3><%= comment.user %></h3>
-		<div id="actions">
+		<div class="actions">
 		<% if can? :update, comment %>
 			<%= link_to "Edit", edit_comment_path(comment) %>|
 		<% end %>

@@ -1,3 +1,22 @@
 // Place all the styles related to the blogpages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.comments {
+	border-bottom: 1px solid #2E3192;
+	padding-bottom: 10px;
+	a {
+		text-decoration: none;
+		color: #00aeef;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	a:hover {
+	  text-decoration: underline;
+	  color: #006991;
+	}
+	a:visited {
+	  text-decoration: none;
+	  color: #006991;
+	}
+}

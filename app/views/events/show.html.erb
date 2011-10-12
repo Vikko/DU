@@ -1,5 +1,5 @@
 <h2><%= @event.title %></h2> on <%= l(@event.date, :format => "%d %b %Y") %>
-<div id="actions">
+<div class="actions">
 <% if can? :update, @event %>
 	<%= link_to "Edit", edit_event_path(@event) %>|
 <% end %>
