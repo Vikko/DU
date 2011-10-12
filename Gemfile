@@ -12,8 +12,6 @@ gem 'inherited_resources'
 gem "meta_search"
 gem "truncate_html"
 
-gem 'activerecord-postgresql-adapter'
-
 gem 'sorcery'
 gem 'cancan'
 # gem 'will_paginate'
