@@ -1,5 +1,5 @@
 <% content_for :leftcol do %>
-	<h4>design united / 
+	<div class='links'><h4>design united / 
 		<% if @about.id == 1 %>
 			<b>about /</b>
 		<% else%>
@@ -24,7 +24,7 @@
 			<b>contact /</b>
 		<% else%>
 			<%= link_to "contact /", contact_path %>
-		<% end %></p><hr/>
+		<% end %></p></div>
 	</p>
 <% end %>
 <div><h2><%= @about.title %></h2></div>
@@ -33,5 +33,4 @@
 	<%= link_to "Edit", edit_about_path(@about) %>
 <% end %>
 </div>
-<hr>
 <%= raw @about.content %>

@@ -1,3 +1,16 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.links {
+	h4 {
+		border-bottom: solid 1px;
+	}
+	padding-left: 10px;
+	padding-right: 10px;
+	a {
+		text-decoration: none;
+		color: #00AEEF;
+	}
+}
