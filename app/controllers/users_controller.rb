@@ -1,11 +1,11 @@
-class UsersController < ApplicationController
+class UsersController < InheritedResources::Base
   def new
     @user = User.new
   end
   
   def index
     if current_user && (current_user.role.eql? "editor")
-      @users = User.find :all, :order => "email ASC"
+      @users = User.order("email ASC")
     else
       redirect_to root_path, :notice => 'Access denied.'
     end
@@ -19,6 +19,11 @@ class UsersController < ApplicationController
       render :new
     end
   end
+  
+  def update
+    update!(:notice => "User saved.") { users_path }
+  end
+    
   
   def activate
     if @user = User.load_from_activation_token(params[:id])
