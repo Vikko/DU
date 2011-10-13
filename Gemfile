@@ -26,6 +26,9 @@ end
 
 gem 'jquery-rails'
 
+
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -35,8 +38,15 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem "mocha", :group => :test
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
-gem "mocha", :group => :test
+
+group :production do
+	gem 'therubyracer'
+	gem 'pg'
+end
+
