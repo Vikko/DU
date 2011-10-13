@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/fusco/ckeditor.git
+  revision: 4c6508c8d0079ab510176eb030bb8e1774ed4372
+  specs:
+    ckeditor (3.6.2)
+      mime-types (~> 1.16)
+      orm_adapter (~> 0.0.5)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -36,6 +44,7 @@ GEM
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cancan (1.6.7)
+    cocaine (0.2.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -82,6 +91,12 @@ GEM
     oauth2 (0.5.1)
       faraday (~> 0.7.4)
       multi_json (~> 1.0.3)
+    orm_adapter (0.0.5)
+    paperclip (2.4.3)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     pg (0.11.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -156,12 +171,14 @@ PLATFORMS
 
 DEPENDENCIES
   cancan
+  ckeditor!
   coffee-rails (~> 3.1.0)
   execjs
   inherited_resources
   jquery-rails
   meta_search
   mocha
+  paperclip
   pg
   rails (= 3.1.0)
   sass-rails (~> 3.1.0)

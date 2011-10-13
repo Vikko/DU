@@ -9,9 +9,11 @@ gem 'inherited_resources'
 gem "meta_search"
 gem "truncate_html"
 
+gem 'ckeditor', :git => 'https://github.com/fusco/ckeditor.git'
+gem 'paperclip'
+
 gem 'sorcery'
 gem 'cancan'
-# gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.
