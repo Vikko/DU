@@ -9,7 +9,7 @@ DesignUnited::Application.routes.draw do
 
   get "pages/index"
   
-  match "about", :controller => "abouts", :action => "show", :id => 1, :as => "about"
+  match "about", :controller => "abouts", :action => "show", :id => 1, :as => "aboutdu"
   match "introduction", :controller => "abouts", :action => "show", :id => 2, :as => "introduction"
   match "beleid", :controller => "abouts", :action => "show", :id => 3, :as => "beleid"
   match "activities", :controller => "abouts", :action => "show", :id => 4, :as => "activities"
