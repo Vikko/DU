@@ -4,12 +4,12 @@
 <% end %>
 </div>
 <% @events.each do |event| %>
-	<h2>
+	<h3>
 	<% if event.external_link.blank? %>	
 		<%= link_to event.title, event %>
 	<% else %>
 		<%= link_to event.title, event.external_link %>
 	<% end %>
-	</h2><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i><br/><hr/>
-	<%= truncate_html(event.content, :length => 400, :omission => '...') %><hr/><hr/>
+	</h3><p><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i></p><br/>
+	<%= truncate_html(event.content, :length => 400, :omission => '...') %>
 <% end %>
