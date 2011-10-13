@@ -15,15 +15,13 @@ gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.
+ gem 'sass-rails', "  ~> 3.1.0"
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
 end
 
 gem 'jquery-rails'
-
-
 
 
 # Use unicorn as the web server
@@ -32,13 +30,13 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-group :development, :test do 
-	if RUBY_VERSION =~ /1.9/ 
-		gem 'ruby-debug19' 
-	else 
-		gem 'ruby-debug' 
-	end 
-end
+# group :development, :test do 
+# 	if RUBY_VERSION =~ /1.9/ 
+# 		gem 'ruby-debug19' 
+# 	else 
+# 		gem 'ruby-debug' 
+# 	end 
+# end
 
 gem "mocha", :group => :test
 
@@ -48,7 +46,7 @@ group :test do
 end
 
 group :production do
-	gem 'therubyracer'
+	gem 'thin'
 	gem 'pg'
 end
 
