@@ -47,6 +47,8 @@ end
 
 group :production do
 	gem 'thin'
+	gem 'execjs'
+	gem 'therubyracer'
 	gem 'pg'
 end
 
