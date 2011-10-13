@@ -4,7 +4,7 @@ class UsersController < InheritedResources::Base
   end
   
   def index
-    if current_user && (current_user.role.eql? "editor")
+    if current_user && (current_user.role == "editor")
       @users = User.order("email ASC")
     else
       redirect_to root_path, :notice => 'Access denied.'

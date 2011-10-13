@@ -5,7 +5,7 @@ class Ability
     # Define abilities for the passed in user here.
     #
     user ||= User.new # guest user (not logged in)
-    if (user.role.eql? "editor")
+    if (user.role == "editor")
       can :manage, :all
     else
       can :read, :all, :published => true
@@ -13,7 +13,7 @@ class Ability
       can :update, Comment do |comment|
         comment && (comment.email == user.email)
       end
-      if (user.role.eql? "blogger")
+      if (user.role == "blogger")
         can :read, Blogpage do |blogpage|
           blogpage && (blogpage.published? || (blogpage.author == user.email))
         end
