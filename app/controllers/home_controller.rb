@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @sidetext = About.find(6)
     @about = About.first
-    @cases = Case.find(:all, :order => "created_at DESC", :limit => 3, :conditions => ["published = ?", true])
-    @blogpages = Blogpage.find(:all, :order => "created_at DESC", :limit => 3, :conditions => ["published = ?", true])
+    @cases = Case.where(:published => true).order("created_at DESC").limit(3)
+    @blogpages = Blogpage.where(:published => true).order("created_at DESC").limit(3)
   end
 end
