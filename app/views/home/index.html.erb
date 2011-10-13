@@ -1,21 +1,15 @@
 <% content_for :leftcol do %>
-<% if @sidetext %>
-	<% if @sidetext.published %>
-		<h3><%= @sidetext.title %></h3>
-		<div class="actions">
-			<% if can? :update, @sidetext %>
-				<%= link_to "Edit", edit_about_path(@sidetext) %>
-			<% end %>
-		</div>
-		<%= raw @sidetext.content %>
+	<% if @sidetext %>
+		<% if @sidetext.published %>
+			<h3><%= @sidetext.title %></h3>
+			<div class="actions">
+				<% if can? :update, @sidetext %>
+					<%= link_to "Edit", edit_about_path(@sidetext) %>
+				<% end %>
+			</div>
+			<%= raw @sidetext.content %>
+		<% end %>
 	<% end %>
-<% end %>
-<% end %>
-<% if notice %>
-	<p id="notice"><%= notice %></p>
-<% end %>
-<% if alert %>
-	<p id="alert"><%= alert %></p>
 <% end %>
 <% if @about %>
 	<h2>about</h2>

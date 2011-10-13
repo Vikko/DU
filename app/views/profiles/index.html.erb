@@ -2,7 +2,7 @@
 <% if can? :create, Profile %>
 	<%= link_to "New profile", new_profile_path %>
 <% end %>	
-</div><hr/>
+</div>
 <% @profiles.each do |profile| %>
 	<p><% name = "" %>
 	<% unless profile.prefix.blank? %>
