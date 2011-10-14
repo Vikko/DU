@@ -1,7 +1,12 @@
 <div id='events'><div class='backgroundtitle'><h4>Events</h4></div>
 <% @agenda = Event.find(:all, :order => "created_at DESC", :limit => 4) %>
 <% @agenda.each do |event| %>
-	<%= link_to event.title, event %><i> on <%= l(event.date, :format => "%d-%b-%Y") %></i><hr/>
+	<% if event.external_link %>
+		<%= link_to event.title, event.external_link %>
+	<% else %>
+		<%= link_to event.title, event %>
+	<% end %>
+	<i> on <%= l(event.date, :format => "%d-%b-%Y") %></i><hr/>
 	<%= strip_tags(event.content) %>
 	<hr><hr>
 <% end %>
