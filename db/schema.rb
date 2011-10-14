@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20111014150759) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "middlename"
+    t.string   "firstnamefull"
+    t.string   "department"
   end
 
   create_table "users", :force => true do |t|

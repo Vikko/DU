@@ -20,6 +20,10 @@
     <%= f.text_field :firstname %>
   </div>
   <div class="field">
+    <%= f.label "Firstname Full" %>: 
+    <%= f.text_field :firstnamefull %>
+  </div>
+  <div class="field">
     <%= f.label :middlename %>: 
     <%= f.text_field :middlename %>
   </div>
@@ -39,6 +43,11 @@
 	<%= f.label :university %>:
 	<%= f.select( :university, ["TU D", "TU E", "UT"]) %>
   </div>
+  <div class="field">
+    <%= f.label "Department" %>: 
+    <%= f.text_field :department %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

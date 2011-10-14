@@ -16,12 +16,15 @@
 	<% unless profile.suffix.blank? %>
 		<% name += profile.suffix.strip + " " %>
 	<% end %>
-	<% name += "(" + profile.university + ")" %>
+	<% unless profile.firstnamefull.blank? %>
+		<% name += "(" + profile.firstnamefull.strip + ") " %>
+	<% end %>
 	<% unless profile.external_link.blank? %>
-		<%= link_to name, profile.external_link %></h2>
+		<%= link_to name, profile.external_link %>
 	<% else%>
 		<%= name %>
 	<% end %>
+	 (<%=profile.university%><% unless profile.department.blank? %> - <%=profile.department%><% end %>)
 	<% if can? :update, profile %>
 		| <%= link_to "Edit", edit_profile_path(profile) %>
 	<% end %>

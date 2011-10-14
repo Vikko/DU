@@ -6,7 +6,9 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :lastname
       t.string :suffix
       t.string :external_link
+      t.string :department
       t.string :university
+      t.string :firstnamefull
 
       t.timestamps
     end
