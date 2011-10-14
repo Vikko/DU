@@ -1,4 +1,10 @@
 DesignUnited::Application.routes.draw do
+  get "passwordreset/create"
+
+  get "passwordreset/edit"
+
+  get "passwordreset/update"
+
   get "login" => "sessions#new", :as => "login"
   get "logout" => "sessions#destroy", :as => "logout"
   get "signup" => "users#new", :as => "signup"
@@ -21,7 +27,7 @@ DesignUnited::Application.routes.draw do
   match "/pages" => "pages#index" #for search
   
   resources :abouts
-  resources :profiles, :cases, :events, :users, :sessions
+  resources :profiles, :cases, :events, :users, :sessions, :passwordresets
   resources :blogpages do
     resources :comments
   end

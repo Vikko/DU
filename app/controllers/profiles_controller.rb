@@ -1,5 +1,6 @@
 class ProfilesController < InheritedResources::Base
-    load_and_authorize_resource
+  load_and_authorize_resource
+
   def create
     create! { collection_url }
   end

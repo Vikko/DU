@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<%= javascript_include_tag :ckeditor %>
+  <%= javascript_include_tag :ckeditor %>
 </head>
 <body>
 <div id='wrapper'>
@@ -45,7 +45,12 @@
 			<% else %>
 				<%= current_user.username %>
 			<% end %>
-			<%= link_to "Logout", logout_path %>
+			<%= link_to "Logout", logout_path %><br/>
+			<% if can? :view, User %>
+				<div id="manageusers">
+				<%= link_to "Manage users", users_path %>
+				</div>
+			<% end %>
 		<% else %>
 			<h4><%= link_to "Sign up", signup_path %> or <%= link_to "log in /", login_path %></h4></div>
 		<% end %>

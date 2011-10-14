@@ -17,7 +17,7 @@ class UserMailer < ActionMailer::Base
 
    def reset_password_email(user)
      @user = user
-     @url  = "http://designunited.heroku.com/password_resets/#{user.reset_password_token}/edit"
+     @url  = "http://designunited.heroku.com/passwordresets/#{user.reset_password_token}/edit"
      mail(:to => user.email,
           :subject => "Your password reset request")
    end
