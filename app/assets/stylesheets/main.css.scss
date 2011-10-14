@@ -9,6 +9,9 @@ body {
 }
 
 div#wrapper {
+	min-height: 100%;
+	margin-bottom: 0px;
+	position: relative;
 	width: 910px;
 	margin-left: auto;
 	margin-right: auto;
@@ -16,6 +19,24 @@ div#wrapper {
 	font-size: 70%;
 	letter-spacing: 0.05em;
 	line-height: 150%;
+}
+
+div#footer {
+	height: 50px;
+	position: relative;
+	background-color:#2e3192;
+    color: #FFFFFF;
+    font-family: Interstatelight, Verdana, Geneva;
+    font-size: 100%;
+    font-variant: small-caps;
+	width: 510px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.clearfooter {
+	height: 0px;
+	clear: both;
 }
 
 div#leftcol {
@@ -84,12 +105,12 @@ table.navmenu {
 
 
 div a.navlink {
-    text-decoration: none;
-    font-family:Interstatelight, Verdana, monospace;; 
-    color: #000;
-    background: #FFF;
-    padding-left:10px !important;
-    padding-right:10px;
+	text-decoration: none;
+	font-family: Interstatelight, Verdana, monospace;
+	color: white;
+	background: #2E3192;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 

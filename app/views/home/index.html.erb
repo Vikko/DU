@@ -21,7 +21,9 @@
 			<% end %>
 			</div>
 		<%= raw truncator(@about.content, 600, '...') %>
-		<p><%= link_to "read more/", aboutdu_path, :class => "readmore" %></p>
+		<p><%= link_to aboutdu_path, :class => "readmore" do %>
+				<%= render :partial => "readmore" %>
+			<% end%></p>
 	<% end %>
 <% end %>
 <% if @cases %>
@@ -37,7 +39,10 @@
 	<% end %>
 	</div>
 	<%= raw truncator(page.content, 600, '...') %>
-	<p><%= link_to "read more/", case_path(page), :class => "readmore" %></p>
+	<p><%= link_to case_path(page), :class => "readmore"  do %>
+			<%= render :partial => "readmore" %>
+		<% end %>
+	</p>
 	<% end%>
 <% end %>
 <% if @blogpages %>
@@ -53,7 +58,10 @@
 	<% end %>
 	</div>
 	<%= raw truncator(blogpage.content, 600, '...') %>
-	<p><%= link_to "read more/", blogpage_path(blogpage), :class => "readmore" %></p>
+	<p><%= link_to blogpage_path(blogpage), :class => "readmore" do %>
+			<%= render :partial => "readmore" %>
+		<% end %>
+	</p>
 	<% end %>
 <% end %>
 <% content_for :rightcol do %>
