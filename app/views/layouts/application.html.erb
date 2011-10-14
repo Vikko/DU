@@ -38,7 +38,8 @@
 	<div id='login'>
 		<div class='backgroundtitle'>
 		<% if current_user %>
-			<h4>Logged in as 
+			<h4>Logged in /</h4></div>
+			as  
 			<% if current_user.username.blank? %>
 				<%= current_user.email %>
 			<% else %>
@@ -46,9 +47,8 @@
 			<% end %>
 			<%= link_to "Logout", logout_path %>
 		<% else %>
-			<h4><%= link_to "Sign up", signup_path %> or <%= link_to "log in /", login_path %></h4>
+			<h4><%= link_to "Sign up", signup_path %> or <%= link_to "log in /", login_path %></h4></div>
 		<% end %>
-		</div>
 	</div>
 		<%= yield :rightcol %>
 	</div>
