@@ -33,6 +33,10 @@
 	<%= f.label :date %><br />
     <%= f.date_select :date, :start_year => 2010, :order => [:day, :month, :year] %>
   </div>
+  <div class="field">
+    <%= f.label :external_link %><br />
+    <%= f.text_field :external_link %>
+  </div>
   <div class="actions">
     <%= f.submit "Save" %>
   </div>
