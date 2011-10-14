@@ -34,4 +34,8 @@ class UsersController < InheritedResources::Base
     end
   end
 
+  def destroy
+    destroy! { users_path }
+    authorize! :destroy, @user
+  end
 end

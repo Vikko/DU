@@ -31,3 +31,4 @@
 	</div>
 	<div class="actions"><%= f.submit %></div>
 <% end %>
+<%= link_to "Delete", @user, :confirm => "Are you sure you want to delete #{@user.email}?\nThis action cannot be undone!", :method => :delete %>
