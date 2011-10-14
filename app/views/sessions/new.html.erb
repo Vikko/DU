@@ -14,4 +14,4 @@
 	</div>
 	<div class="actions"><%= submit_tag "Log in" %></div>
 <% end %>
-<%= link_to "forgot password", passwordresets_path, :method => :post, :email => params[:email] %>
+<%= link_to "forgot password", passwordresets_path, {:action => 'index', :email => params[:email], :method => :post} %>

@@ -23,7 +23,18 @@ class UsersController < InheritedResources::Base
   def update
     update!(:notice => "User saved.") { users_path }
   end
-    
+  
+  def act
+    @user = params[:user]
+    @user.activation_state = "active"
+		@user.save
+  end
+  
+  def deact
+    @user = params[:user]
+    @user.activation_state = "inactive"
+		@user.save
+  end
   
   def activate
     if @user = User.load_from_activation_token(params[:id])
