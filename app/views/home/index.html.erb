@@ -1,7 +1,6 @@
 <% content_for :leftcol do %>
 	<% if @sidetext %>
 		<% if @sidetext.published %>
-			<h3><%= @sidetext.title %></h3>
 			<div class="actions">
 				<% if can? :update, @sidetext %>
 					<%= link_to "Edit", edit_about_path(@sidetext) %>
