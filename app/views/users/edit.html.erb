@@ -31,4 +31,18 @@
 	</div>
 	<div class="actions"><%= f.submit %></div>
 <% end %>
+Activation state: <%= @user.activation_state %> | 
+<% if @user.activation_state == "active" %>
+	<%= link_to edit_user_path(@user) do %>
+		Deactivate
+		<% @user.activation_state = "inactive" %>
+		<% @user.save %>
+	<% end %>
+<% else %>
+	<%= link_to edit_user_path(@user) do %>
+		Activate
+		<% @user.activation_state = "active" %>
+		<% @user.save %>
+	<% end %>
+<% end %><br/>
 <%= link_to "Delete", @user, :confirm => "Are you sure you want to delete #{@user.email}?\nThis action cannot be undone!", :method => :delete %>
