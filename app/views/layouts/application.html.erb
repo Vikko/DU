@@ -11,11 +11,15 @@
 <div id='wrapper'>
 <div id='leftcol'>
 	<p>
+		<div id='DULogo'>
 		<%= link_to root_path do %>
 			<img src="/images/DUlogo.png" width="160px"/>
 		<% end %>
+		</div>
 	</p>
-	<%= yield :leftcol %>
+	<div id='leftcontent'>
+		<%= yield :leftcol %>
+	</div>
 </div>
 <div id='midcol'>
 	<div id='navigation'>
@@ -60,6 +64,7 @@
 </div>
 <div class="clearfooter"></div>
 </div>
-<div id="footer">Hello world</div>
+<div id="footercenter">
+<div id="footer">Hello world</div></div>
 </body>
 </html>
