@@ -29,6 +29,14 @@ div#footer {
     font-family: Interstatelight, Verdana, Geneva;
     font-size: 100%;
     font-variant: small-caps;
+	text-align: center;
+	td {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	table {
+		width: 100%;
+	}
 	width: 490px;
 	margin-left: 20px;
 	margin-right: 0px;;
@@ -61,12 +69,13 @@ div#DULogo {
 	padding-bottom: 18px;
 }
 
-div#DULogo:link {
+div#DULogo a img {
 	border: none;
 }
 
 div#leftcontent {
 	background-color: #FFF;
+	padding: 10px;
 }
 
 H2 {
@@ -113,6 +122,9 @@ table.navmenu {
 	text-align: left;
 	margin-left: -3px;
 	margin-top: -12px;
+	td {
+ 		min-width: 23px;
+	}
 }
 
 
@@ -123,15 +135,6 @@ div a.navlink {
 	background: #2E3192;
 	padding-left: 10px;
 	padding-right: 10px;
-}
-
-
-div a.navlink:hover {
-  font-weight: bold;
-}
-
-div a.navlink:hover {
-	font-weight: bold;
 }
 
 div#content {
