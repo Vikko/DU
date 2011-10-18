@@ -51,6 +51,6 @@ group :production do
 	gem 'thin'
 	gem 'execjs'
 	gem 'therubyracer'
-	gem 'mysql2'
+	gem 'pg'
 end
 

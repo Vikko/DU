@@ -4,7 +4,7 @@
 <% end %>
 </div>
 <% @cases.each do |page| %>
-	<h3><%= link_to page.title, page %></h3>
+	<h3><%= page.title %></h3>
 	<div class="actions">
 	<% if can? :update, page%>
 		<%= link_to "Edit", edit_case_path(page) %>|
@@ -14,4 +14,5 @@
 	<% end %>
 	</div>
 	<%= truncate_html(page.content, :length => 400, :omission => '...') %>
+	<%= link_to "read more", page, :class => "readmore" %> <img src='/images/color_slash.gif'>
 <% end %>
