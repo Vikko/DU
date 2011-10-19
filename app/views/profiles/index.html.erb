@@ -17,14 +17,14 @@
 		<% name += profile.suffix.strip + " " %>
 	<% end %>
 	<% unless profile.firstnamefull.blank? %>
-		<% name += "(" + profile.firstnamefull.strip + ") " %>
+		<% name += "(" + profile.firstnamefull.strip + ")" %>
 	<% end %>
 	<% unless profile.external_link.blank? %>
-		<%= link_to name, profile.external_link %>
+		<%= link_to name, profile.external_link %> 
 	<% else%>
 		<%= name %>
 	<% end %>
-	 (<%=profile.university%><% unless profile.department.blank? %> - <%=profile.department%><% end %>)
+	  (<%=profile.university%><% unless profile.department.blank? %> - <%=profile.department%><% end %>)
 	<% if can? :update, profile %>
 		| <%= link_to "Edit", edit_profile_path(profile) %>
 	<% end %>

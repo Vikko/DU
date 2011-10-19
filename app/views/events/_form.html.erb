@@ -12,29 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label :content %>
     <%= f.cktext_area :content, :toolbar => "Easy" %>
   </div>
   <div class="field">
-    <%= f.label :published %><br />
+    <%= f.label :published %>
     <%= f.check_box :published %>
   </div>
   <% if (current_user.role == "editor") %>
   <div class="field">
-    <%= f.label :author %><br />
+    <%= f.label :author %>
     <%= f.text_field :author %>
   </div>
   <% end %>
   <div class="field">
-	<%= f.label :date %><br />
+	<%= f.label :date %>
     <%= f.date_select :date, :start_year => 2010, :order => [:day, :month, :year] %>
   </div>
   <div class="field">
-    <%= f.label :external_link %><br />
+    <%= f.label :external_link %>
     <%= f.text_field :external_link %>
   </div>
   <div class="actions">

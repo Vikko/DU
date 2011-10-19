@@ -1,12 +1,26 @@
-<div id='events'><div class='backgroundtitle'><h4>Events</h4></div>
-<% @agenda = Event.find(:all, :order => "created_at DESC", :limit => 4) %>
+<div id='events'><h2>Events</h2>
+<table>
+<% months = Array.new %>
 <% @agenda.each do |event| %>
+	<% unless months.include?(event.date.month) %>
+		<% months << event.date.month %>
+		<tr><td class="eventmonth" colspan=2><%= l(event.date, :format => "%B") %></td></tr>
+	<% end %>
+	<tr><td><%= l(event.date, :format => "%d") %></td>
+	<td class="eventtitle"><b>
 	<% if event.external_link %>
 		<%= link_to event.title, event.external_link %>
 	<% else %>
 		<%= link_to event.title, event %>
-	<% end %>
-	<i> on <%= l(event.date, :format => "%d-%b-%Y") %></i><hr/>
-	<%= strip_tags(event.content) %>
-	<hr><hr>
+	<% end %></b>
+	</td></tr>
+	<tr><td/>
+	<td> <%= strip_tags(event.content) %>
+		<% if event.external_link %>
+			<%= link_to "read more", event.external_link, :class => "readmore" %>
+		<% else %>
+			<%= link_to "read more", event, :class => "readmore" %>
+		<% end %></td>
+		</tr>
 <% end %>
+</table>
