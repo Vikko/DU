@@ -1,7 +1,12 @@
 @font-face {
     font-family: Interstatelight;
-    src: url(http://web.tudelft.nl/Designunited/V2/fonts/Interstate-Light.otf);
-    font-weight:800;
+    src: url('http://localhost:3000/font/interstate-light-webfont.eot');
+    src: url('http://localhost:3000/font/interstate-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://localhost:3000/font/interstate-light-webfont.woff') format('woff'),
+         url('http://localhost:3000/font/interstate-light-webfont.ttf') format('truetype'),
+         url('http://localhost:3000/font/interstate-light-webfont.svg#InterstateLightRegular') format('svg');
+    font-weight: 800;
+    font-style: normal;
 }
 
 body {
@@ -139,6 +144,8 @@ div a.navlink {
 	padding-left: 10px;
 	padding-right: 10px;
 	display: block;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 td.navlink {
@@ -153,7 +160,7 @@ div table#contact {
 
 div#content {
 	background-color: #FFF;
-	margin-top: 25px;
+	margin-top: 29px;
 	padding-top: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -177,7 +184,7 @@ div.actions {
 }
 
 div#rightcol {
-	margin-top: 27px;
+	margin-top: 31px;
 	margin-left: 10px;
 	margin-bottom: 10px;
 	margin-right: 0px;
