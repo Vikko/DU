@@ -15,11 +15,11 @@
 	<% end %></b>
 	</td></tr>
 	<tr><td/>
-	<td> <%= strip_tags(event.content) %>
+	<td> <%= strip_tags(event.content) %><br/>
 		<% if event.external_link %>
-			<%= link_to "read more", event.external_link, :class => "readmore" %>
+			<%= link_to "read more", event.external_link, :class => "readmore" %>  <img src='/images/color_slash.gif'>
 		<% else %>
-			<%= link_to "read more", event, :class => "readmore" %>
+			<%= link_to "read more", event, :class => "readmore" %>  <img src='/images/color_slash.gif'>
 		<% end %></td>
 		</tr>
 <% end %>
