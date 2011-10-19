@@ -12,19 +12,6 @@
 		<% end %>
 	<% end %>
 <% end %>
-<% if @about %>
-	<h2>about</h2>
-	<% if @about.published %>
-		<h3><%= @about.title %></h3>
-		<div class="actions">
-			<% if can? :update, @about %>
-				<%= link_to "Edit", edit_about_path(@about) %>
-			<% end %>
-			</div>
-		<%= raw truncator(@about.content, 600, '...') %>
-		<%= link_to "read more", aboutdu_path, :class => "readmore" %> <img src='/images/color_slash.gif'>
-	<% end %>
-<% end %>
 <% if @cases %>
 	<h2>cases</h2>
 	<% @cases.each do |page| %>
