@@ -28,7 +28,7 @@
 <%= link_to "Add comment", new_blogpage_comment_path(@blogpage, Comment.new) %>
 <% content_for :rightcol do %>
 	<%= render :partial => "relatedprofiles" %>
-	<% if @agenda %>
+	<% unless @agenda.blank? %>
 		<div id='events'><h2>related events</h2>
 		<%= render :partial => "events" %>
 		</div>
