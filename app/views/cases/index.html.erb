@@ -17,5 +17,9 @@
 	<%= link_to "read more", page, :class => "readmore" %> <img src='/images/color_slash.gif'>
 <% end %>
 <% content_for :rightcol do %>
-	<%= render :partial => "events" %>
+	<% if @agenda %>
+		<div id='events'><h2>events</h2>
+		<%= render :partial => "events" %>
+		</div>
+	<% end %>
 <% end %>

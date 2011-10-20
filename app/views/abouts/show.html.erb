@@ -36,5 +36,9 @@
 </div>
 <%= raw @about.content %>
 <% content_for :rightcol do %>
-	<%= render :partial => "events" %>
+	<% if @agenda %>
+		<div id='events'><h2>events</h2>
+		<%= render :partial => "events" %>
+		</div>
+	<% end %>
 <% end %>

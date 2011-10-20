@@ -27,5 +27,11 @@
 <% end %>
 <%= link_to "Add comment", new_blogpage_comment_path(@blogpage, Comment.new) %>
 <% content_for :rightcol do %>
-	<%= render :partial => "related" %>
+	<%= render :partial => "relatedprofiles" %>
+	<% if @agenda %>
+		<div id='events'><h2>related events</h2>
+		<%= render :partial => "events" %>
+		</div>
+	<% end %>
+	<%= render :partial => "relatedpages" %>
 <% end %>
