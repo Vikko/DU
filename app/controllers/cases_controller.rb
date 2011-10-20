@@ -2,7 +2,13 @@ class CasesController < InheritedResources::Base
     load_and_authorize_resource
     
     def index
-      @blogpages = Blogpage.order("created_at DESC")
+      @cases = Case.order("created_at DESC")
+      @agenda = Event.find(:all, :order => "date ASC", :limit => 3)
+    end
+    
+    def show
+      @agenda = Event.find(:all, :order => "date ASC", :limit => 3)
+      show!
     end
     
     def new

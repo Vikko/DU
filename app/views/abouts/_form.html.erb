@@ -19,13 +19,17 @@
     <%= f.cktext_area :content, :toolbar => 'Easy' %>
   </div>
   <div class="field">
-    <%= f.label :published %>
     <%= f.check_box :published %>
+	<%= f.label :published %>
   </div>
     <% if (current_user.role == "editor") %>
   <div class="field">
     <%= f.label :author %>
     <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :tags %>
+    <%= f.text_field :tags %>
   </div>
   <% end %>
   <div class="actions">

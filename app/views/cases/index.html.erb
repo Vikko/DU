@@ -16,3 +16,6 @@
 	<%= truncate_html(page.content, :length => 400, :omission => '...') %>
 	<%= link_to "read more", page, :class => "readmore" %> <img src='/images/color_slash.gif'>
 <% end %>
+<% content_for :rightcol do %>
+	<%= render :partial => "events" %>
+<% end %>

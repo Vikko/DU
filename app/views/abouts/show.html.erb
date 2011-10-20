@@ -1,10 +1,11 @@
 <% content_for :leftcol do %>
-	<div class='links'><h4>design united / 
+	<div id='leftcontent'>
+	<div class='links'><h4>design united /</h4>
 		<% if @about.id == 1 %>
 			<b>about /</b>
 		<% else%>
 			<%= link_to "about /", aboutdu_path %>
-		<% end %></h4><p>
+		<% end %><p>
 		<% if @about.id == 2 %>
 			<b>introduction /</b>
 		<% else%>
@@ -24,8 +25,8 @@
 			<b>contact /</b>
 		<% else%>
 			<%= link_to "contact /", contact_path %>
-		<% end %></p></div>
-	</p>
+		<% end %></p><div id="line"></div></div>
+	</div>
 <% end %>
 <div><h2><%= @about.title %></h2></div>
 <div class="actions">
@@ -34,3 +35,6 @@
 <% end %>
 </div>
 <%= raw @about.content %>
+<% content_for :rightcol do %>
+	<%= render :partial => "events" %>
+<% end %>

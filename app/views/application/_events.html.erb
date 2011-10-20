@@ -7,20 +7,21 @@
 		<tr><td class="eventmonth" colspan=2><%= l(event.date, :format => "%B") %></td></tr>
 	<% end %>
 	<tr><td><%= l(event.date, :format => "%d") %></td>
-	<td class="eventtitle"><b>
-	<% if event.external_link %>
-		<%= link_to event.title, event.external_link %>
-	<% else %>
+	<td class="eventtitle">
+	<% if event.external_link.blank? %>	
 		<%= link_to event.title, event %>
-	<% end %></b>
+	<% else %>
+		<%= link_to event.title, event.external_link %>
+	<% end %>
 	</td></tr>
 	<tr><td/>
-	<td> <%= strip_tags(event.content) %><br/>
+	<td> <%= truncate_html(event.content, :length => 80, :omission => "..") %>
 		<% if event.external_link %>
-			<%= link_to "read more", event.external_link, :class => "readmore" %>  <img src='/images/color_slash.gif'>
+			<%= link_to "read more", event.external_link, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'>
 		<% else %>
-			<%= link_to "read more", event, :class => "readmore" %>  <img src='/images/color_slash.gif'>
+			<%= link_to "read more", event, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'>
 		<% end %></td>
 		</tr>
 <% end %>
-</table>
+</table><p>
+<%= link_to "more events", events_path, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'></p>

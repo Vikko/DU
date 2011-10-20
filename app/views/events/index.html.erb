@@ -10,6 +10,11 @@
 	<% else %>
 		<%= link_to event.title, event.external_link %>
 	<% end %>
-	</h3><p><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i></p><br/>
+	</h3>
+	<div class="actions">
+	<% if can? :update, event %>
+		<%= link_to "Edit", edit_event_path(event) %>
+	<% end %></div>
+	<p><i>on: <%= l(event.date, :format => "%d-%b-%Y") %></i></p><br/>
 	<%= truncate_html(event.content, :length => 400, :omission => '...') %>
 <% end %>

@@ -8,3 +8,6 @@
 <% end %>	
 </div>
 <%= raw @case.content %>
+<% content_for :rightcol do %>
+	<%= render :partial => "events" %>
+<% end %>

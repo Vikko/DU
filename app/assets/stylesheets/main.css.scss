@@ -42,7 +42,7 @@ div#footer {
 	table {
 		width: 100%;
 	}
-	width: 490px;
+	width: 470px;
 	margin-left: 20px;
 	margin-right: 0px;;
 }
@@ -83,6 +83,15 @@ div#leftcontent {
 	padding: 10px;
 }
 
+div.links {
+	p {
+		margin-left: 10px;
+	}
+	div#line {
+		border-bottom: solid 1px;
+	}
+}
+
 H2 {
     font-family: Interstatelight !important;
     font-size:160%;
@@ -106,7 +115,7 @@ H3 {
 }
 
 div#midcol {
-	width: 490px;
+	width: 470px;
 	float: left;
 	margin-top: 15px;
 	margin-left: 10px;
@@ -118,7 +127,7 @@ div#navigation {
     width:100%;
     float:left;
     text-align:center;
-    font-family:Interstatelight, Verdana, monospace;
+    font-family: Interstatelight, Verdana, monospace;
     font-size:120%;
 }
 
@@ -134,7 +143,6 @@ table.navmenu {
 		width: auto;
 	}
 }
-
 
 div a.navlink {
 	text-decoration: none;
@@ -155,7 +163,8 @@ td.navlink {
 div table#contact {
 	float: right;
 	margin-top: -12px;
-	margin-right: -203px;
+	margin-right: -223px;
+	letter-spacing: 0.1em;
 }
 
 div#content {
@@ -164,7 +173,12 @@ div#content {
 	padding-top: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
-	padding-bottom: 10px;}
+	padding-bottom: 10px;
+	p img {
+		margin-top: 2px;
+		margin-right: 10px;
+	}
+}
 
 div.actions {
 	text-align:right;
@@ -188,7 +202,7 @@ div#rightcol {
 	margin-left: 10px;
 	margin-bottom: 10px;
 	margin-right: 0px;
-  	width: 180px;
+  	width: 200px;
 	float: right;
 	input {
 		width: 160px;
@@ -199,7 +213,7 @@ div#search input#search_content_contains {
 	width: 154px;
 }
 
-div#login, div#search, div#events {
+div#login, div#search, div#events, div.related {
     background-color: #FFFFFF;
     color: #000000;
     font-family: Interstatelight, Verdana, Geneva;
@@ -213,14 +227,27 @@ div#login, div#search, div#events {
 	}
 }
 
-td.eventtitle {
-	a {
-		text-decoration: none;
-	}
+td.eventmonth {
+	padding-top: 15px;
+	text-transform: uppercase;
 }
 
-td.eventmonth {
-	text-transform: uppercase;
+
+div#events {
+	img {
+		width: 145px !important;
+		height: auto !important;
+	} 
+	img.readmore {
+	width: 7px !important;
+	}
+	table {
+		width: 145px;
+		p {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+	}
 }
 
 div.backgroundtitle {
@@ -234,6 +261,9 @@ div.backgroundtitle {
 	a {
 		color: #FFF;
 		text-decoration: none;
+	}
+	h4 {
+		font-weight: normal;
 	}
 }
 

@@ -4,32 +4,18 @@
 <% end %>	
 </div>
 <% @profiles.each do |profile| %>
-	<p><% name = "" %>
-	<% unless profile.prefix.blank? %>
-		<% name += profile.prefix.strip + " " %>
-	<% end %>
-	<% name += profile.firstname.strip + " " %>
-	<% unless profile.middlename.blank? %>
-		<% name += profile.middlename.strip + " " %>
-	<% end %>
-	<% name += profile.lastname.strip + " " %>
-	<% unless profile.suffix.blank? %>
-		<% name += profile.suffix.strip + " " %>
-	<% end %>
-	<% unless profile.firstnamefull.blank? %>
-		<% name += "(" + profile.firstnamefull.strip + ")" %>
-	<% end %>
+	<p>
 	<% unless profile.external_link.blank? %>
-		<%= link_to name, profile.external_link %> 
+		<%= link_to profile.fullname, profile.external_link %> 
 	<% else%>
-		<%= name %>
+		<%= profile.fullname %>
 	<% end %>
-	  (<%=profile.university%><% unless profile.department.blank? %> - <%=profile.department%><% end %>)
+	  (<%=profile.university%><% unless profile.department.blank? %> - <%= profile.department %><% end %>)
 	<% if can? :update, profile %>
 		| <%= link_to "Edit", edit_profile_path(profile) %>
 	<% end %>
 	<% if can? :destroy, profile %>
-		| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+name+"?\nThis action cannot be undone!", :method => :delete %>
+		| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+profile.fullname+"?\nThis action cannot be undone!", :method => :delete %>
 	<% end %>
 	</p>
 <% end %>

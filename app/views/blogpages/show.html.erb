@@ -26,3 +26,6 @@
 	<p>No comments were found.</p>
 <% end %>
 <%= link_to "Add comment", new_blogpage_comment_path(@blogpage, Comment.new) %>
+<% content_for :rightcol do %>
+	<%= render :partial => "related" %>
+<% end %>
