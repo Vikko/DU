@@ -1,0 +1,18 @@
+<div class='related'>
+<% unless @relatedprofiles.blank? %>
+	<h2>related contacts</h2>
+	<table>
+		<% @relatedprofiles.each do |profile| %>
+			<p>
+				<% unless profile.external_link.blank? %>
+					<%= link_to profile.shortname, profile.external_link %>
+				<% else %>
+					<%= profile.shortname %>
+				<% end %>
+				<br/>	
+				<%= profile.university %><% unless profile.department.blank?%> - <%= profile.department %><%end%>
+			</p>
+		<% end %>
+	</table>
+<% end %>
+</div>
