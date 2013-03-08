@@ -6,3 +6,4 @@ doc/PvE
 doc/*.pdf
 .sass-cache/
 config/initializers/setup_mail.rb
+public/
