@@ -2,7 +2,7 @@ class CasesController < InheritedResources::Base
     
     def index
       @cases = Case.order("created_at DESC")
-      @agenda = Event.find(:all, :conditions => "end_date > NOW()", :order => "date ASC", :limit => 3)
+      @agenda = Event.present.order("date ASC").limit(3)
     end
     
     def show
@@ -12,7 +12,7 @@ class CasesController < InheritedResources::Base
         @case = Case.find_by_navigation_link(params[:id])
       end
       authorize! :read, @case
-      @agenda = Event.find(:all, :conditions => "end_date > NOW()", :order => "date ASC", :limit => 2)
+      @agenda = Event.present.order("date ASC").limit(2)
       @cases = Case.order("created_at DESC")
       load_related(@case)
       show!

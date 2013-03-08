@@ -4,13 +4,13 @@ class EventsController < InheritedResources::Base
     def index
       @events = Event.order("date DESC")
       @events.each do |event|
-        if event.end_date && event.end_date <= Time.now + 1.day
+        if event.end_date && event.end_date <= Time.now - 1.day
           event.archived = 1;
           event.save
         end
       end
-      @new_events = @events.select{|event| event.end_date && event.end_date > Time.now}
-      @old_events = @events - @new_events
+      @new_events = Event.present.order("date DESC")
+      @old_events = Event.passed.order("date DESC")
     end
     
     def new

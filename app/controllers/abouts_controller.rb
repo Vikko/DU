@@ -8,7 +8,7 @@ class AboutsController < InheritedResources::Base
       @about = About.find_by_navigation_link(params[:id])
     end
     authorize! :read, @about
-    @agenda = Event.find(:all, :conditions => "end_date > NOW()", :order => "date ASC", :limit => 3)
+    @agenda = Event.present.order("date ASC").limit(3)
     show!
   end
   
