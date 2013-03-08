@@ -1,18 +1,17 @@
-<div class='related'>
 <% unless @relatedprofiles.blank? %>
+<div class='related'>
 	<h2>related contacts</h2>
-	<table>
-		<% @relatedprofiles.each do |profile| %>
-			<p>
-				<% unless profile.external_link.blank? %>
-					<%= link_to profile.shortname, profile.external_link %>
-				<% else %>
-					<%= profile.shortname %>
-				<% end %>
-				<br/>	
-				<%= profile.university %><% unless profile.department.blank?%> - <%= profile.department %><%end%>
-			</p>
+	<% @relatedprofiles.each do |profile| %>
+		<p>
+		<% unless profile.external_link.blank? %>
+			<%= link_to profile.shortname, profile.external_link, :target => "_blank" %>
+		<% else %>
+			<%= profile.shortname %>
 		<% end %>
-	</table>
-<% end %>
+		<br/>	
+		<%= profile.university %><% unless profile.department.blank?%> - <%= profile.department %><%end%>
+		</p>
+	<% end %>
 </div>
+<% end %>
+

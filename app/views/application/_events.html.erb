@@ -1,26 +1,27 @@
 <table>
 <% months = Array.new %>
 <% @agenda.each do |event| %>
+	<% if event.published %>
 	<% unless months.include?(event.date.month) %>
 		<% months << event.date.month %>
 		<tr><td class="eventmonth" colspan=2><%= l(event.date, :format => "%B") %></td></tr>
 	<% end %>
 	<tr><td><%= l(event.date, :format => "%d") %></td>
 	<td class="eventtitle">
-	<% if event.external_link.blank? %>	
-		<%= link_to event.title, event %>
-	<% else %>
-		<%= link_to event.title, event.external_link %>
-	<% end %>
+	<b><%= event.title %></b>
 	</td></tr>
 	<tr><td/>
-	<td> <%= truncate_html(event.content, :length => 80, :omission => "..") %>
-		<% if event.external_link %>
-			<%= link_to "read more", event.external_link, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'>
+	<td>
+	<div class="post">
+	<%= truncate_html(event.content, :length => 80, :omission => "..") %>
+	</div>
+		<% unless event.external_link.blank? %>
+			<%= link_to "read more", event.external_link, :class => "readmore", :target => "_blank" %>  <img class="readmore" src='/images/color_slash.gif'>
 		<% else %>
 			<%= link_to "read more", event, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'>
 		<% end %></td>
 		</tr>
+	<% end %>
 <% end %>
 </table><p>
 <%= link_to "more events", events_path, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'></p>

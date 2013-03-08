@@ -1,3 +1,4 @@
+<% title("Blog") %>
 <h2>blog</h2>
 <div class="actions">
 <% if can? :create, Blogpage %>
@@ -7,7 +8,16 @@
 <% @blogpages.each do |page| %>
 	<% if can? :read, page %>
 	<h3><%= page.title %></h3>
-	<p><i>by: <%= page.author %> on <%= l(page.created_at, :format => :short) %></i></p>
-	<%= truncate_html(page.content, :length => 400, :omission => '...') %><%= link_to "read more", blogpage_path(page), :class => "readmore" %> <img src='/images/color_slash.gif'> | <%= link_to "add comment", new_blogpage_comment_path(page, Comment.new), :class => "readmore" %> <img src='/images/color_slash.gif'>
+	<p><i>by: <% if @user = User.find_by_email(page.author) %>
+			<%= @user.username %>
+		<% else %>
+			<%= page.author %>
+		<% end %> on <%= l(page.created_at, :format => "%d %B %Y") %>
+	</i></p><div class="post">
+	<% if page.content %>
+		<%= truncator(page.content, 400, '...') %>
 	<% end %>
+	</div>
+	<%= link_to "read more", blogpage_path(page), :class => "readmore" %>
+	<img src='/images/color_slash.gif'><% end %>
 <% end %>

@@ -15,17 +15,16 @@ DesignUnited::Application.routes.draw do
 
   get "pages/index"
   
-  match "about", :controller => "abouts", :action => "show", :id => 1, :as => "aboutdu"
-  match "introduction", :controller => "abouts", :action => "show", :id => 2, :as => "introduction"
-  match "beleid", :controller => "abouts", :action => "show", :id => 3, :as => "beleid"
-  match "activities", :controller => "abouts", :action => "show", :id => 4, :as => "activities"
-  match "contact", :controller => "abouts", :action => "show", :id => 5, :as => "contact"
-  
+  match "about", :controller => "abouts", :action => "show", :id => "1", :as => "aboutdu"
+  match "introduction", :controller => "abouts", :action => "show", :id => "2", :as => "introduction"
+  match "mission", :controller => "abouts", :action => "show", :id => "3", :as => "mission"
+  match "activities", :controller => "abouts", :action => "show", :id => "4", :as => "activities"
+  match "contact", :controller => "abouts", :action => "show", :id => "5", :as => "contact"
   
   root :to => "home#index"
   
   match "/pages" => "pages#index" #for search
-  
+
   resources :abouts
   resources :profiles, :cases, :events, :users, :sessions, :passwordresets
   resources :blogpages do
@@ -36,5 +35,7 @@ DesignUnited::Application.routes.draw do
       get :activate
     end
   end
+
+
   
 end

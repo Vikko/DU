@@ -1,5 +1,15 @@
 class Profile < ActiveRecord::Base
-
+  validates_uniqueness_of :navigation_link
+  before_save :remove_dots
+  
+  def to_param
+    navigation_link
+  end
+  
+  def remove_dots
+    navigation_link.tr!(".","")
+  end
+  
   def shortname
     name = ""
   	unless self.prefix.blank?

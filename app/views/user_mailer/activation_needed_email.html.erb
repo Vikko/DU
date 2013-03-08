@@ -1,16 +1,57 @@
-<html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-  </head>
-  <body>
-    <h1>Welcome to Design United!</h1>
-    <p>
-      You have successfully signed up to www.designunited.nl,
-      your login is: <%= @user.email %>.<br/>
-    </p>
-    <p>
-      To login to the site, just follow this link: <%= @url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
-  </body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="IE=9.0000" http-equiv="X-UA-Compatible">
+<title>DesignUnited</title>
+<style type="text/css">
+@font-face {
+  font-family: Interstatelight;
+  src: url("http://designunited.tudelft.nl/font/interstate-light-webfont.eot");
+  src: url("http://designunited.tudelft.nl/font/interstate-light-webfont.eot?#iefix") format("embedded-opentype"), url("http://designunited.tudelft.nl/font/interstate-light-webfont.woff") format("woff"), url("http://designunited.tudelft.nl/font/interstate-light-webfont.ttf") format("truetype"), url("http://designunited.tudelft.nl/font/interstate-light-webfont.svg#InterstateLightRegular") format("svg");
+  font-weight: 800;
+  font-style: normal;
+}
+
+h2{
+  font-family: Interstatelight !important;
+  font-size: 160%;
+  color: #2e3192;
+  border-bottom: 1px solid #2e3192;
+  line-height: 140%;
+  margin: 10px;
+}
+
+div#content {
+	padding: 10px;
+}
+
+img {
+	margin-left: -10px;
+}
+
+body {
+	background: url(<%= attachments['bg.gif'].url %>) repeat;
+}
+
+div#midcol {
+	background: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	width: 490px;
+}
+</style>
+</head>
+<body>
+
+<div id="midcol">
+<div id="content">
+<h2>Welcome to Design United</h2>
+
+<p><%= image_tag attachments['DUlogo_h.jpg'].url, :width => 490, :alt => "Design United", :longdesc => "http://www.designunited.nl" %></p> 
+
+<h3>You are nearly there...</h3>
+<p>You have successfully signed up to <a href="http://www.designunited.nl/">designunited</a>,  <br>
+<%= link_to "Activate my Design united account", @url %><br> 
+ If this link does not work, copy the below in your browser:<br><%= @url %><br>
+  </p>
+<p>Thanks for joining!<br>
+  Design United</p>
+</div></div>
+</body></html>

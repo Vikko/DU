@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019142819) do
+ActiveRecord::Schema.define(:version => 20130308151731) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(:version => 20111019142819) do
     t.string   "external_link"
     t.datetime "date"
     t.string   "tags"
+    t.datetime "end_date"
+    t.string   "navigation_link"
+    t.string   "blogger_image_path"
+    t.string   "blogger_name"
+    t.string   "blogger_info"
+    t.boolean  "archived"
   end
 
   create_table "profiles", :force => true do |t|
@@ -60,13 +66,14 @@ ActiveRecord::Schema.define(:version => 20111019142819) do
     t.string   "lastname"
     t.string   "suffix"
     t.string   "external_link"
+    t.string   "department"
     t.string   "university"
+    t.string   "firstnamefull"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "middlename"
-    t.string   "firstnamefull"
-    t.string   "department"
     t.string   "tags"
+    t.string   "navigation_link"
   end
 
   create_table "users", :force => true do |t|

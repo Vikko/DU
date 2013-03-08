@@ -1,10 +1,10 @@
 @font-face {
     font-family: Interstatelight;
-    src: url('http://designunited.heroku.com/font/interstate-light-webfont.eot');
-    src: url('http://designunited.heroku.com/font/interstate-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('http://designunited.heroku.com/font/interstate-light-webfont.woff') format('woff'),
-         url('http://designunited.heroku.com/font/interstate-light-webfont.ttf') format('truetype'),
-         url('http://designunited.heroku.com/font/interstate-light-webfont.svg#InterstateLightRegular') format('svg');
+    src: url('http://designunited.tudelft.nl/font/interstate-light-webfont.eot');
+    src: url('http://designunited.tudelft.nl/font/interstate-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://designunited.tudelft.nl/font/interstate-light-webfont.woff') format('woff'),
+         url('http://designunited.tudelft.nl/font/interstate-light-webfont.ttf') format('truetype'),
+         url('http://designunited.tudelft.nl/font/interstate-light-webfont.svg#InterstateLightRegular') format('svg');
     font-weight: 800;
     font-style: normal;
 }
@@ -79,13 +79,29 @@ a img {
 }
 
 div#leftcontent {
+	font-family: Interstatelight, Verdana, Geneva;
 	background-color: #FFF;
 	padding: 10px;
+	p {
+		color: #2e3192;
+		width: 160px;
+		margin-left: 10px;
+	}
 }
 
 div.links {
 	p {
 		margin-left: 10px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		color: #000000 !important;
+	}
+
+	a {
+		color: #2e3192;
+	}
+	a:hover {
+		text-decoration: underline;
 	}
 	div#line {
 		border-bottom: solid 1px;
@@ -105,6 +121,7 @@ H3 {
     font-size: 140%;
     color: #000000;
     line-height: 140%;
+    margin-bottom: 0px;
 	a {
 		text-decoration: none;
 		color: #000;
@@ -162,9 +179,10 @@ td.navlink {
 
 div table#contact {
 	float: right;
-	margin-top: -12px;
-	margin-right: -223px;
+	margin-top: 3px;
+	margin-right: -3px;
 	letter-spacing: 0.1em;
+	font-size: 120%;
 }
 
 div#content {
@@ -180,43 +198,79 @@ div#content {
 	}
 }
 
+iframe.twitter-share-button {
+	position: absolute;
+	top: 58px;
+	left: 620px;
+}
+
+div.post {
+	overflow: hidden;
+}
+
+div.post p {
+	margin-top: 5px
+}
+
+span.university {
+	font-style: italic;
+}
+
 div.actions {
 	text-align:right;
     color:#666;
     float:right;
     position:relative;
-    top:-30px;
+    top:-27px;
     line-height:0%;
-	a:link {
-		text-decoration: underline;
+	a {
+		text-decoration: none;
 		color:#999;
 		background: #FFF;
 	}
 	a:hover {
-		font-weight: bold;
+		text-decoration: underline;
 	}
 }
 
+div.top0 {
+    	top: 16px;
+    	position: relative;
+}
+
+div.top-15 {
+	top: -15px;
+	position: relative;
+}
+
+div.top15 {
+	top: 42px;
+	position: relative;
+}
+
 div#rightcol {
-	margin-top: 31px;
+	margin-top: 0px;
 	margin-left: 10px;
 	margin-bottom: 10px;
 	margin-right: 0px;
   	width: 200px;
 	float: right;
 	input {
-		width: 160px;
+		width: 180px;
 	}
 }
 
 div#search input#search_content_contains {
-	width: 154px;
+	width: 174px;
+}
+
+div#search {
+	margin-top: 44px;
 }
 
 div#login, div#search, div#events, div.related {
-    background-color: #FFFFFF;
     color: #000000;
-    font-family: Interstatelight, Verdana, Geneva;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 100%;
     margin-left:0px;
 	padding-left: 10px;
@@ -225,6 +279,17 @@ div#login, div#search, div#events, div.related {
 	h2 {
 		padding-top: 5px;
 	}
+	td {
+		vertical-align: top;
+	}
+}
+
+div#login, div#search {
+	background-color: #EEEDF6;
+}
+
+div.related, div#events {
+	background-color: #FFFFFF
 }
 
 div.related {
@@ -261,16 +326,18 @@ div.backgroundtitle {
     background-color:#2e3192;
     color: #FFFFFF;
     font-family: Interstatelight, Verdana, Geneva;
-    font-size: 100%;
+    font-size: 120%;
 	padding-left: 10px;
 	margin-left: -10px;
 	margin-right: -10px;
+	height: 20px;
 	a {
 		color: #FFF;
 		text-decoration: none;
 	}
 	h4 {
 		font-weight: normal;
+		padding-top: 2px;
 	}
 }
 

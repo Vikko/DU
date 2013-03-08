@@ -23,7 +23,7 @@
     <%= f.label :published %><br />
     <%= f.check_box :published %>
   </div>
-    <% if (current_user.role == "editor") %>
+    <% if (current_user && current_user.role == "editor") %>
   <div class="field">
     <%= f.label :author %><br />
     <%= f.text_field :author %>

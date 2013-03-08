@@ -16,21 +16,25 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :navigation_link %>
+    <%= f.text_field :navigation_link %>
+  </div>
+  <div class="field">
     <%= f.label :content %>
     <%= f.cktext_area :content, :toolbar => "Easy" %>
   </div>
+  <% if (current_user && current_user.role == "editor") %>
   <div class="field">
     <%= f.label :published %>
     <%= f.check_box :published %>
   </div>
-  <% if (current_user.role == "editor") %>
   <div class="field">
     <%= f.label :author %>
     <%= f.text_field :author %>
   </div>
   <div class="field">
-    <%= f.label :tags %>
-    <%= f.text_field :tags %>
+    <%= f.label :tags %><br/>
+    <%= f.text_area :tags, :size => "40x3", :style => "resize: none;" %>
   </div>
   <% end %>
   <div class="actions">

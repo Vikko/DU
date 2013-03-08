@@ -8,6 +8,7 @@
 					<% end %>
 				</div>
 				<%= raw @sidetext.content %>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
 			</div>
 		<% end %>
 	<% end %>
@@ -16,16 +17,20 @@
 	<h2>cases</h2>
 	<% @cases.each do |page| %>
 	<h3><%= page.title %></h3>
-	<div class="actions">
+	<div class="actions"><div class="top0">
 	<% if can? :update, page %>	
-		<%= link_to "Edit", edit_case_path(page) %>|
+		<%= link_to "Edit", edit_case_path(page) %> |
 	<% end %>
 	<% if can? :destroy, page %>
 		<%= link_to "Delete", page, :confirm => "Are you sure you want to delete "+page.title+"?\nThis action cannot be undone!", :method => :delete %>
 	<% end %>
+	</div></div>
+	<div class="post">
+	<% if page.content %>
+		<%= raw truncator(page.content, 400, '...') %>
+	<% end %>
 	</div>
-	<%= raw truncator(page.content, 600, '...') %>
-	<p>	<%= link_to "read more", case_path(page), :class => "readmore" %> <img src='/images/color_slash.gif'>
+	<p><%= link_to "read more", case_path(page), :class => "readmore" %> <img src='/images/color_slash.gif'>
 	</p>
 	<% end%>
 <% end %>
@@ -33,15 +38,21 @@
 	<h2>blog</h2>
 	<% @blogpages.each do |blogpage| %>
 	<h3><%= blogpage.title %></h3>
-	<div class="actions">
+	<div class="actions"><div class="top0">
 	<% if can? :update, blogpage %>
-		<%= link_to "Edit", edit_blogpage_path(blogpage) %>|
+		<%= link_to "Edit", edit_blogpage_path(blogpage) %> |
 	<% end %>
 	<% if can? :destroy, blogpage %>
-		<%= link_to "Delete", blogpage, :confirm => "Are you sure you want to delete "+blogpage.title+"?\nThis action cannot be undone!", :method => :delete %>
+		<%= link_to "Delete", blogpage_path(blogpage), :confirm => "Are you sure you want to delete "+blogpage.title+"?\nThis action cannot be undone!", :method => :delete %>
+	<% elsif current_user && current_user.role = "blogger" %>
+		<%= link_to "Delete", {:controller => "blogpages", :action => "unpublish", :id => blogpage.id} %>
+	<% end %>
+	</div></div>
+	<div class="post">
+	<% if blogpage.content%>	
+		<%= raw truncator(blogpage.content, 400, '...') %>
 	<% end %>
 	</div>
-	<%= raw truncator(blogpage.content, 600, '...') %>
 	<p><%= link_to "read more", blogpage_path(blogpage), :class => "readmore" %> <img src='/images/color_slash.gif'>
 	</p>
 	<% end %>

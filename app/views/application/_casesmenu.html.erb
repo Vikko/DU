@@ -1,0 +1,29 @@
+<% content_for :leftcol do %>
+	<div id='leftcontent'>
+	<div class='links'><h4>design united&#160;/</h4>
+		<% if @case.blank? %>
+			<b>cases&#160;/</b>
+		<% else%>
+			<%= link_to cases_path do %>
+				cases&#160;/
+			<% end %>
+		<% end %>
+		<% @cases.each do |c| %>
+			<% if can? :read, c %>
+			<p><% if @case && @case.id == c.id %>
+				<b><%= c.title %>&#160;/<% unless c.published %>&#160;*<% end %></b>
+			<% else%>
+				<% if c.published %>
+					<%= link_to c do %>
+						<%= c.title %>&#160;/
+					<% end %>
+				<% else %> 
+					<%= link_to c do %>
+						<%= c.title %>&#160;/&#160;*
+					<% end %>
+				<% end %>
+			<% end %></p><% end %>
+		<% end %>
+		<div id="line"></div></div>
+	</div>
+<% end %>

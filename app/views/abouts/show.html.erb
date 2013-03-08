@@ -1,31 +1,35 @@
+<% title(@about.title) %>
+<% content_for :tags do %><%= @about.tags %><% end %>
 <% content_for :leftcol do %>
 	<div id='leftcontent'>
-	<div class='links'><h4>design united /</h4>
-		<% if @about.id == 1 %>
-			<b>about /</b>
-		<% else%>
-			<%= link_to "about /", aboutdu_path %>
-		<% end %><p>
-		<% if @about.id == 2 %>
-			<b>introduction /</b>
-		<% else%>
-			<%= link_to "introduction /", introduction_path %>
-		<% end %></p><p>
-		<% if @about.id == 3 %>
-			<b>beleid /</b>
-		<% else%>
-			<%= link_to "beleid /", beleid_path %>
-		<% end %></p><p>
-		<% if @about.id == 4 %>
-			<b>activities /</b>
-		<% else%>
-			<%= link_to "activities /", activities_path %>
-		<% end %></p><p>
-		<% if @about.id == 5 %>
-			<b>contact /</b>
-		<% else%>
-			<%= link_to "contact /", contact_path %>
-		<% end %></p><div id="line"></div></div>
+		<div class='links'>
+			<h4>design united /</h4>
+			<% if @about.id == 1 %>
+				<b>about /</b>
+			<% else%>
+				<%= link_to "about /", aboutdu_path %>
+			<% end %><p>
+			<% if @about.id == 2 %>
+				<b>introduction /</b>
+			<% else%>
+				<%= link_to "introduction /", introduction_path %>
+			<% end %></p><p>
+			<% if @about.id == 3 %>
+				<b>mission /</b>
+			<% else%>
+				<%= link_to "mission /", mission_path %>
+			<% end %></p><p>
+			<% if @about.id == 4 %>
+				<b>activities /</b>
+			<% else%>
+				<%= link_to "activities /", activities_path %>
+			<% end %></p><p>
+			<% if @about.id == 5 %>
+				<b>contact /</b>
+			<% else%>
+				<%= link_to "contact /", contact_path %>
+			<% end %></p><div id="line"></div>
+		</div>
 	</div>
 <% end %>
 <div><h2><%= @about.title %></h2></div>
@@ -34,11 +38,13 @@
 	<%= link_to "Edit", edit_about_path(@about) %>
 <% end %>
 </div>
+<div class="post">
 <%= raw @about.content %>
+</div>
 <% content_for :rightcol do %>
 	<% if @agenda %>
-		<div id='events'><h2>events</h2>
-		<%= render :partial => "events" %>
+		<div id='events'>
+			<h2>events</h2><%= render :partial => "events" %>
 		</div>
 	<% end %>
 <% end %>

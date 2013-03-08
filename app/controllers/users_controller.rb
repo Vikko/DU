@@ -7,7 +7,7 @@ class UsersController < InheritedResources::Base
     if current_user && (current_user.role == "editor")
       @users = User.order("email ASC")
     else
-      redirect_to root_path, :alert => 'Access denied.'
+      redirect_to login_path, :alert => 'Access denied. Please log in.'
     end
   end
   

@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :navigation_link %>: 
+    <%= f.text_field :navigation_link %>
+  </div>
+  <div class="field">
     <%= f.label :prefix %>: 
     <%= f.text_field :prefix %>
   </div>
@@ -41,15 +45,15 @@
   </div>
   <div class="field">
 	<%= f.label :university %>:
-	<%= f.select( :university, ["TU Delft", "TU E", "U Twente"]) %>
+	<%= f.select( :university, ["TUD", "TU/e", "UT"]) %>
   </div>
   <div class="field">
-    <%= f.label "Department" %>: 
+    <%= f.label "Chair" %>
     <%= f.text_field :department %>
   </div>
   <div class="field">
-	<%= f.label :tags %>
-	<%= f.text_field :tags %>
+	<%= f.label :tags %><br/>
+	<%= f.text_area :tags, :size => "40x3", :style => "resize: none;" %>
   </div>
   <div class="actions">
     <%= f.submit %>

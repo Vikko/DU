@@ -1,7 +1,7 @@
 <h2>search results</h2>
 <% @pages.each do |page| %>
 	<% if can? :read, page %>
-		<p><%= link_to page.title, page %></br><hr><%= truncate_html(page.content, :length => 400, :omission => "...") %></p>
+		<h3><%= page.title %></h3><hr><p><%= truncate_html(page.content, :length => 400, :omission => "...") %><%= link_to "read more", page, :class => "readmore" %>  <img class="readmore" src='/images/color_slash.gif'></p>
 	<% end %>
 <% end %>
 	

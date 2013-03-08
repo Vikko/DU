@@ -1,3 +1,14 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.gal-holder .gal-item .gal-inner-holder .img-data {
+  overflow: scroll !important;
+  .img-name {
+    overflow: scroll !important;	
+  }
+}
+
+p.readmore {
+	margin-top: 0;
+}

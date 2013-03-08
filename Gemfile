@@ -2,8 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'sqlite3'
-
 gem 'inherited_resources'
 
 gem "meta_search"
@@ -32,13 +30,16 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# group :development, :test do 
+group :development do 
+  gem "debugger"
 # 	if RUBY_VERSION =~ /1.9/ 
 # 		gem 'ruby-debug19' 
 # 	else 
 # 		gem 'ruby-debug' 
 # 	end 
-# end
+end
+
+#gem 'sqlite3', :group => :development
 
 gem "mocha", :group => :test
 
@@ -51,6 +52,6 @@ group :production do
 	gem 'thin'
 	gem 'execjs'
 	gem 'therubyracer'
-	gem 'pg'
+	gem 'mysql2'
 end
 

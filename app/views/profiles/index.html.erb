@@ -1,21 +1,25 @@
-<h2>Map</h2><div class="actions">
+<% title("Profiles") %>
+<h2>Profiles</h2><div class="actions">
 <% if can? :create, Profile %>
 	<%= link_to "New profile", new_profile_path %>
 <% end %>	
 </div>
+<%= render :partial => "sortprof" %>
 <% @profiles.each do |profile| %>
 	<p>
 	<% unless profile.external_link.blank? %>
-		<%= link_to profile.fullname, profile.external_link %> 
+		<%= link_to profile.fullname, profile.external_link, :target => "_blank" %> 
 	<% else%>
 		<%= profile.fullname %>
 	<% end %>
-	  (<%=profile.university%><% unless profile.department.blank? %> - <%= profile.department %><% end %>)
+	<br/>
+	<span class="university">(<%=profile.university%><% unless profile.department.blank? %> - <%= profile.department %><% end %>)</span>
+	<div class="actions">
 	<% if can? :update, profile %>
-		| <%= link_to "Edit", edit_profile_path(profile) %>
+		<%= link_to "Edit", edit_profile_path(profile) %>
 	<% end %>
 	<% if can? :destroy, profile %>
 		| <%= link_to "Delete", profile, :confirm => "Are you sure to delete "+profile.fullname+"?\nThis action cannot be undone!", :method => :delete %>
-	<% end %>
+	<% end %></div>
 	</p>
 <% end %>

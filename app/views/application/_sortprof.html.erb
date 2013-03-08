@@ -1,0 +1,31 @@
+<% content_for :leftcol do %>
+	<div id='leftcontent'>
+	<div class='links'>
+	<h4>Sort by:</h4>
+	<p>
+	<% if params[:sort]=="firstnamefull ASC" %>
+		<%= link_to "First Name", {:controller => "profiles", :action => "index", :sort => "firstnamefull DESC"}%>
+	<% else %>
+		<%= link_to "First Name", {:controller => "profiles", :action => "index", :sort => "firstnamefull ASC"}%>
+	<% end %>
+	</p><p>
+	<% if params[:sort]=="lastname ASC" %>
+		<%= link_to "Last Name", {:controller => "profiles", :action => "index", :sort => "lastname DESC"}%>
+	<% else %>
+		<%= link_to "Last Name", {:controller => "profiles", :action => "index", :sort => "lastname ASC"}%>
+	<% end %>
+	</p><p>
+	<% if params[:sort]=="university ASC" %>
+		<%= link_to "University", {:controller => "profiles", :action => "index", :sort => "university DESC"}%>
+	<% else %>
+		<%= link_to "University", {:controller => "profiles", :action => "index", :sort => "university ASC"}%>
+	<% end %>
+	</p><p>
+	<% if params[:sort]=="department ASC" %>
+		<%= link_to "Chair", {:controller => "profiles", :action => "index", :sort => "department DESC"}%>
+	<% else %>
+		<%= link_to "Chair", {:controller => "profiles", :action => "index", :sort => "department ASC"}%>
+	<% end %>
+	</p>
+	</div></div>
+<% end %>

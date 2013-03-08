@@ -14,11 +14,9 @@ class Ability
         comment && (comment.email == user.email)
       end
       if (user.role == "blogger")
-        can :read, Blogpage do |blogpage|
-          blogpage && (blogpage.published? || (blogpage.author == user.email))
-        end
         can :create, Blogpage
-        can [:update, :destroy], Page do |page|
+        can :unpublish, Blogpage
+        can :update, Page do |page|
           page && page.author == user.email
         end
       end

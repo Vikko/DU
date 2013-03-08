@@ -1,10 +1,10 @@
-<div class='related'>
 <% unless @relatedpages.blank? %>
+<div class='related'>
 	<h2>related pages</h2>
 	<table>	
 		<% @relatedpages.each do |page| %>
 			<tr><td><%= link_to page.title, page %></td></tr>
 		<% end %>
 	</table>
-<% end %>
 </div>
+<% end %>

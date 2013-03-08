@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DesignUnited</title>
+<meta name="description" content="Design United, platform for Dutch Research in Design’ is a new initiative by the 3TU programs in Industrial Design. ">
+<meta name="keywords" content="design, united, innovative, industrial, research, <%= yield :tags %>">
+<meta name="author" content="DesignUnited">
+<meta name="copyright" content="Copyright 2011-<%=Time.now.year%> Delft University of Techology, University of Twente, Eindhoven University of Technology">
+<meta name="robots" content="index, follow">
+<meta name="revisit-after" content="7 days">
+  <title>Design United <%= yield :title %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -34,6 +40,11 @@
 	</div>
 </div>
 <div id='rightcol'>
+	<table id="contact">
+        <tbody>
+                        <td><%= link_to "contact", contact_path, :class => "navlink" %></td>
+        </tbody>
+	</table>
 	<div id='search'><div class='backgroundtitle'><h4>search /</h4></div>
 	<%= render :partial => "search" %>
 	</div>
@@ -63,6 +74,28 @@
 <div class="clearfooter"></div>
 </div>
 <div id="footercenter">
-<div id="footer"><table><tr><td>|IMAGE 1|</td><td>|IMAGE 2|</td><td>|IMAGE 3|</td><td>|IMAGE 4|</td></tr></table></div></div>
+<div id="footer">
+<table>
+<tr>
+<td><a href="http://www.io.tudelft.nl/" target="_blank"><img src="/images/TU_d_logo_100px.png" width="100px"/></a></td>
+<td><a href="http://www.tue.nl/universiteit/kolom-2/faculteiten/industrial-design/" target="_blank"><img src="/images/TUe_logo_100px.png" width="100px"/></a></td>
+<td><a href="http://www.utwente.nl/ide/" target="_blank"><img src="/images/UT_logo_100px.png" width="100px"/></a></td>
+<td><a href="http://www.agentschapnl.nl/" target="_blank"><img src="/images/AgentNL_logo_100px.png" width="100px"/></a></td>
+</tr>
+</table></div>
+</div>
+<script type="text/javascript">
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26637317-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script>
 </body>
 </html>

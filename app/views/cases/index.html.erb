@@ -1,20 +1,29 @@
+<% content_for :leftcol do %>
+	<%= render :partial => "casesmenu" %>
+<% end %>
+<% title("Cases") %>
 <h2>cases</h2> <div class="actions">
 <% if can? :create, Case %>
 	<%= link_to "Add new case", new_case_path %>
 <% end %>
 </div>
 <% @cases.each do |page| %>
+	<% if can? :read, page %>
 	<h3><%= page.title %></h3>
-	<div class="actions">
+	<div class="actions"><div class="top0">
 	<% if can? :update, page%>
-		<%= link_to "Edit", edit_case_path(page) %>|
+		<%= link_to "Edit", edit_case_path(page) %> |
 	<% end %>
 	<% if can? :destroy, page %>
 		<%= link_to "Delete", page, :confirm => "Are you sure you want to delete "+page.title+"?\nThis action cannot be undone!", :method => :delete %>
 	<% end %>
+	</div></div><div class="post">
+	<% if page.content %>
+		<%= truncator(page.content, 400, '...') %>
+	<% end %>
 	</div>
-	<%= truncate_html(page.content, :length => 400, :omission => '...') %>
 	<%= link_to "read more", page, :class => "readmore" %> <img src='/images/color_slash.gif'>
+<% end %>
 <% end %>
 <% content_for :rightcol do %>
 	<% if @agenda %>

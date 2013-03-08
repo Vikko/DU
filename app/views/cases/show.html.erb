@@ -1,14 +1,23 @@
+<% title(@case.title) %>
+<% content_for :tags do %><%= @case.tags %><% end %>
 <h2><%= @case.title %></h2>
 <div class="actions">
 <% if can? :update, @case %>
-	<%= link_to "Edit", edit_case_path(@case) %>|
+	<%= link_to "Edit", edit_case_path(@case) %> |
 <% end %>
 <% if can? :destroy, @case %>
 	<%= link_to "Delete", @case, :confirm => "Are you sure you want to delete "+@case.title+"?\nThis action cannot be undone!", :method => :delete %>
 <% end %>	
-</div>
+</div><div class="post">
 <%= raw @case.content %>
+</div>
+<% content_for :leftcol do %>
+	<%= render :partial => "casesmenu" %>
+<% end %>
 <% content_for :rightcol do %>
+	<% unless @relatedprofiles.blank? %>
+                <%= render :partial => "relatedprofiles" %>
+        <% end %>
 	<% if @agenda %>
 		<div id='events'><h2>events</h2>
 		<%= render :partial => "events" %>

@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-  def load_related(page)
+
+  rescue_from CanCan::AccessDenied do |exception|
+      flash[:alert] = "Access Denied. Please log in."
+      redirect_to login_url
+    end
+
+def load_related(page)
     search = []
     unless page.tags.blank?
       search = page.tags.split(", ")
@@ -16,11 +21,12 @@ class ApplicationController < ActionController::Base
     @relatedevents = []
     @relatedprofiles = []
     pages.each do |pa|
-      pa.each do |page|
-        if page.type == "Event"
-          @relatedevents << page
+      pa.reject! {|p| p==page}
+      pa.each do |p|
+        if p.type == "Event"
+          @relatedevents << p
         else
-          @relatedpages << page
+          @relatedpages << p
         end
       end
     end
@@ -28,7 +34,7 @@ class ApplicationController < ActionController::Base
       pr.each do |profile|
         @relatedprofiles << profile
       end 
-    end
+    end    
     @relatedpages.uniq!
     @relatedevents.uniq!
     @relatedprofiles.uniq!
